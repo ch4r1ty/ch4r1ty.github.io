@@ -13,15 +13,15 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="安装segment-everything项目来源https:&#x2F;&#x2F;github.com&#x2F;facebookresearch&#x2F;segment-anything本地环境​	shell + jupyter 中搭建以下环境​	pyTorch 1.21​	torchvision 0.131 ​	 模型因为电脑配置，选用 vit_b 占用内存最小的模型：        https:&#x2F;&#x2F;dl.fbaipublicf">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/truck.jpg">
-<meta property="og:image" content="http://example.com/segment-everything/truckafter.png">
-<meta property="og:image" content="http://example.com/segment-everything/mask_number.png">
-<meta property="og:image" content="http://example.com/segment-everything/monitor.png">
+<meta property="og:image" content="http://example.com/.com//truck.jpg">
+<meta property="og:image" content="http://example.com/.com//truckafter.png">
+<meta property="og:image" content="http://example.com/.com//mask_number.png">
+<meta property="og:image" content="http://example.com/.com//monitor.png">
 <meta property="article:published_time" content="2023-04-13T14:50:41.000Z">
-<meta property="article:modified_time" content="2023-04-13T15:27:55.094Z">
+<meta property="article:modified_time" content="2023-04-13T15:40:25.878Z">
 <meta property="article:author" content="ch4r1ty">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/truck.jpg">
+<meta name="twitter:image" content="http://example.com/.com//truck.jpg">
     
     
       
@@ -151,11 +151,11 @@
 <p>​	</p>
 <h5 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h5><p>因为电脑配置，选用 vit_b 占用内存最小的模型：<br>        <a target="_blank" rel="noopener" href="https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth">https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth</a></p>
 <h3 id="项目效果"><a href="#项目效果" class="headerlink" title="项目效果"></a>项目效果</h3><p>官方文件中给的文件效果如下：</p>
-<p><img src="/truck.jpg" alt="load fail"></p>
+<p><img src="/.com//truck.jpg" alt="load fail"></p>
 <p>分割之后的效果如下：</p>
-<p><img src="/segment-everything/truckafter.png" alt="truckafter"></p>
+<p><img src="/.com//truckafter.png" alt="truckafter"></p>
 <p>分割后的层数：47</p>
-<p><img src="/segment-everything/mask_number.png"></p>
+<p><img src="/.com//mask_number.png"></p>
 <h5 id="问题和改进"><a href="#问题和改进" class="headerlink" title="问题和改进"></a>问题和改进</h5><p>​	项目搭建在macos系统上，pytorch官方没有提供cuda加速（gpu加速）的相关包，所以在原文档中注释掉了相关代码： </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> using_colab:</span><br><span class="line">    <span class="keyword">import</span> torch</span><br><span class="line">    <span class="keyword">import</span> torchvision</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;PyTorch version:&quot;</span>, torch.__version__)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Torchvision version:&quot;</span>, torchvision.__version__)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;CUDA is available:&quot;</span>, torch.cuda.is_available())</span><br><span class="line">    <span class="keyword">import</span> sys</span><br><span class="line">    !&#123;sys.executable&#125; -m pip install opencv-python matplotlib</span><br><span class="line">    !&#123;sys.executable&#125; -m pip install <span class="string">&#x27;git+https://github.com/facebookresearch/segment-anything.git&#x27;</span> </span><br></pre></td></tr></table></figure>
 
@@ -164,7 +164,7 @@
 
 <p>​	类似地，其他有cuda出现的地方都注释掉。</p>
 <p>​	而在segment-everthing的官方文档中，强烈建议使用带有cuda加速的pytorch版本。因此在mask生成时候，没有用到mac的gpu，速度相对较慢（下图可见gpu: 0.0%）。有机会的话可以部署到其他服务器或者使用windows系统运行，比较一下运行速度。</p>
-<p><img src="/segment-everything/monitor.png" alt="monitor"></p>
+<p><img src="/.com//monitor.png" alt="monitor"></p>
 
   </div>
 </article>
