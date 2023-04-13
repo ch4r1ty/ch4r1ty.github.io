@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="安装segment-everything项目来源https:&#x2F;&#x2F;github.com&#x2F;facebookresearch&#x2F;segment-anything本地环境​	shell + jupyter 中搭建以下环境​	pyTorch 1.21​	torchvision 0.131 ​	 模型因为电脑配置，选用 vit_b 占用内存最小的模型：        https:&#x2F;&#x2F;dl.fbaipublicf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="segment-everything">
+<meta property="og:url" content="http://example.com/2023/04/13/segment-everything/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="安装segment-everything项目来源https:&#x2F;&#x2F;github.com&#x2F;facebookresearch&#x2F;segment-anything本地环境​	shell + jupyter 中搭建以下环境​	pyTorch 1.21​	torchvision 0.131 ​	 模型因为电脑配置，选用 vit_b 占用内存最小的模型：        https:&#x2F;&#x2F;dl.fbaipublicf">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/segment-everything/truck.jpg">
+<meta property="og:image" content="http://example.com/segment-everything/truckafter.png">
+<meta property="og:image" content="http://example.com/segment-everything/mask_number.png">
+<meta property="og:image" content="http://example.com/segment-everything/monitor.png">
+<meta property="article:published_time" content="2023-04-13T14:50:41.000Z">
+<meta property="article:modified_time" content="2023-04-13T15:17:03.022Z">
+<meta property="article:author" content="ch4r1ty">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/segment-everything/truck.jpg">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>segment-everything</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/04/12/toefl/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/04/13/segment-everything/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/04/13/segment-everything/&text=segment-everything"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/04/13/segment-everything/&title=segment-everything"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/04/13/segment-everything/&is_video=false&description=segment-everything"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=segment-everything&body=Check out this article: http://example.com/2023/04/13/segment-everything/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/04/13/segment-everything/&title=segment-everything"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/04/13/segment-everything/&title=segment-everything"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/04/13/segment-everything/&title=segment-everything"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/04/13/segment-everything/&title=segment-everything"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/04/13/segment-everything/&name=segment-everything&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/04/13/segment-everything/&t=segment-everything"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85segment-everything"><span class="toc-number">1.</span> <span class="toc-text">安装segment-everything</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%9D%A5%E6%BA%90"><span class="toc-number">1.0.1.</span> <span class="toc-text">项目来源</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#https-github-com-facebookresearch-segment-anything"><span class="toc-number">1.0.2.</span> <span class="toc-text">https:&#x2F;&#x2F;github.com&#x2F;facebookresearch&#x2F;segment-anything</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83"><span class="toc-number">1.0.3.</span> <span class="toc-text">本地环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.0.4.</span> <span class="toc-text">模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%95%88%E6%9E%9C"><span class="toc-number">2.</span> <span class="toc-text">项目效果</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%92%8C%E6%94%B9%E8%BF%9B"><span class="toc-number">2.0.1.</span> <span class="toc-text">问题和改进</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        segment-everything
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">ch4r1ty</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-04-13T14:50:41.000Z" itemprop="datePublished">2023-04-13</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="安装segment-everything"><a href="#安装segment-everything" class="headerlink" title="安装segment-everything"></a>安装segment-everything</h3><h5 id="项目来源"><a href="#项目来源" class="headerlink" title="项目来源"></a>项目来源</h5><h5 id="https-github-com-facebookresearch-segment-anything"><a href="#https-github-com-facebookresearch-segment-anything" class="headerlink" title="https://github.com/facebookresearch/segment-anything"></a><a target="_blank" rel="noopener" href="https://github.com/facebookresearch/segment-anything">https://github.com/facebookresearch/segment-anything</a></h5><h5 id="本地环境"><a href="#本地环境" class="headerlink" title="本地环境"></a>本地环境</h5><p>​	shell + jupyter 中搭建以下环境<br>​	pyTorch 1.21<br>​	torchvision 0.131</p>
+<p>​	</p>
+<h5 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h5><p>因为电脑配置，选用 vit_b 占用内存最小的模型：<br>        <a target="_blank" rel="noopener" href="https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth">https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth</a></p>
+<h3 id="项目效果"><a href="#项目效果" class="headerlink" title="项目效果"></a>项目效果</h3><p>官方文件中给的文件效果如下：</p>
+<p><img src="/segment-everything/truck.jpg" alt="loading fail"></p>
+<p>分割之后的效果如下：</p>
+<p><img src="/segment-everything/truckafter.png" alt="truckafter"></p>
+<p>分割后的层数：47</p>
+<p><img src="/segment-everything/mask_number.png"></p>
+<h5 id="问题和改进"><a href="#问题和改进" class="headerlink" title="问题和改进"></a>问题和改进</h5><p>​	项目搭建在macos系统上，pytorch官方没有提供cuda加速（gpu加速）的相关包，所以在原文档中注释掉了相关代码： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> using_colab:</span><br><span class="line">    <span class="keyword">import</span> torch</span><br><span class="line">    <span class="keyword">import</span> torchvision</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;PyTorch version:&quot;</span>, torch.__version__)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Torchvision version:&quot;</span>, torchvision.__version__)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;CUDA is available:&quot;</span>, torch.cuda.is_available())</span><br><span class="line">    <span class="keyword">import</span> sys</span><br><span class="line">    !&#123;sys.executable&#125; -m pip install opencv-python matplotlib</span><br><span class="line">    !&#123;sys.executable&#125; -m pip install <span class="string">&#x27;git+https://github.com/facebookresearch/segment-anything.git&#x27;</span> </span><br></pre></td></tr></table></figure>
+
+<p>​	注释后变成：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> using_colab:</span><br><span class="line">    <span class="keyword">import</span> torch</span><br><span class="line">    <span class="keyword">import</span> torchvision</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;PyTorch version:&quot;</span>, torch.__version__)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Torchvision version:&quot;</span>, torchvision.__version__)</span><br><span class="line">    <span class="comment"># print(&quot;CUDA is available:&quot;, torch.cuda.is_available())</span></span><br><span class="line">    <span class="keyword">import</span> sys</span><br><span class="line">    !&#123;sys.executable&#125; -m pip install opencv-python matplotlib</span><br><span class="line">    !&#123;sys.executable&#125; -m pip install <span class="string">&#x27;git+https://github.com/facebookresearch/segment-anything.git&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>​	类似地，其他有cuda出现的地方都注释掉。</p>
+<p>​	而在segment-everthing的官方文档中，强烈建议使用带有cuda加速的pytorch版本。因此在mask生成时候，没有用到mac的gpu，速度相对较慢（下图可见gpu: 0.0%）。有机会的话可以部署到其他服务器或者使用windows系统运行，比较一下运行速度。</p>
+<p><img src="/segment-everything/monitor.png" alt="monitor"></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85segment-everything"><span class="toc-number">1.</span> <span class="toc-text">安装segment-everything</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%9D%A5%E6%BA%90"><span class="toc-number">1.0.1.</span> <span class="toc-text">项目来源</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#https-github-com-facebookresearch-segment-anything"><span class="toc-number">1.0.2.</span> <span class="toc-text">https:&#x2F;&#x2F;github.com&#x2F;facebookresearch&#x2F;segment-anything</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83"><span class="toc-number">1.0.3.</span> <span class="toc-text">本地环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.0.4.</span> <span class="toc-text">模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%95%88%E6%9E%9C"><span class="toc-number">2.</span> <span class="toc-text">项目效果</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%92%8C%E6%94%B9%E8%BF%9B"><span class="toc-number">2.0.1.</span> <span class="toc-text">问题和改进</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/04/13/segment-everything/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/04/13/segment-everything/&text=segment-everything"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/04/13/segment-everything/&title=segment-everything"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/04/13/segment-everything/&is_video=false&description=segment-everything"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=segment-everything&body=Check out this article: http://example.com/2023/04/13/segment-everything/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/04/13/segment-everything/&title=segment-everything"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/04/13/segment-everything/&title=segment-everything"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/04/13/segment-everything/&title=segment-everything"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/04/13/segment-everything/&title=segment-everything"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/04/13/segment-everything/&name=segment-everything&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/04/13/segment-everything/&t=segment-everything"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2023
+    ch4r1ty
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
