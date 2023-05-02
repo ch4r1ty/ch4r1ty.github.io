@@ -14,7 +14,7 @@
 <meta property="og:description" content="The project is compatible with CPU, allowing users running on Mac M1 platform without CUDA accelerating PreparationCreate a new virtual environment, and activate it 12conda create bark;conda activate">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-05-02T06:20:58.000Z">
-<meta property="article:modified_time" content="2023-05-02T06:58:10.806Z">
+<meta property="article:modified_time" content="2023-05-02T07:01:31.008Z">
 <meta property="article:author" content="ch4r1ty">
 <meta name="twitter:card" content="summary">
     
@@ -155,7 +155,7 @@
 <p>Install <strong>ipython</strong>:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install ipython</span><br></pre></td></tr></table></figure>
 
-<p>ipython in wikipedia:<br>IPython是一種基於Python的互動式直譯器。相較於原生的Python Shell，IPython提供了更為強大的編輯和互動功能。</p>
+<p>&#x2F;&#x2F;ipython in wikipedia:<br>&#x2F;&#x2F;IPython是一種基於Python的互動式直譯器。相較於原生的Python Shell，IPython提供了更為強大的編輯和互動功能。</p>
 <p>Then use <strong>ipython</strong> to write python sentences:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bark <span class="keyword">import</span> SAMPLE_RATE, generate_audio, preload_models</span><br><span class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> Audio</span><br><span class="line"></span><br><span class="line"><span class="comment"># download and load all models</span></span><br><span class="line">preload_models()</span><br><span class="line"></span><br><span class="line"><span class="comment"># generate audio from text</span></span><br><span class="line">text_prompt = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">     Hello, my name is Suno. And, uh — and I like pizza. [laughs] </span></span><br><span class="line"><span class="string">     But I also have other interests such as playing tic tac toe.</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">audio_array = generate_audio(text_prompt)</span><br><span class="line"></span><br><span class="line"><span class="comment"># play text in notebook</span></span><br><span class="line">Audio(audio_array, rate=SAMPLE_RATE)</span><br></pre></td></tr></table></figure>
 
