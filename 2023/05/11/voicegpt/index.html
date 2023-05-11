@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="voicegptThis is a python file allowing you to talk with chatgpt, using bark, whisper and chatgptAPIConfigure the environmentWe highly recommend you deploy the new project in a brand-new virtual enviro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="voicegpt">
+<meta property="og:url" content="http://example.com/2023/05/11/voicegpt/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="voicegptThis is a python file allowing you to talk with chatgpt, using bark, whisper and chatgptAPIConfigure the environmentWe highly recommend you deploy the new project in a brand-new virtual enviro">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-05-11T13:28:07.000Z">
+<meta property="article:modified_time" content="2023-05-11T13:28:50.636Z">
+<meta property="article:author" content="ch4r1ty">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>voicegpt</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/05/04/GRE-reading/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/05/11/voicegpt/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/05/11/voicegpt/&text=voicegpt"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/05/11/voicegpt/&title=voicegpt"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/05/11/voicegpt/&is_video=false&description=voicegpt"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=voicegpt&body=Check out this article: http://example.com/2023/05/11/voicegpt/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/05/11/voicegpt/&title=voicegpt"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/05/11/voicegpt/&title=voicegpt"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/05/11/voicegpt/&title=voicegpt"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/05/11/voicegpt/&title=voicegpt"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/05/11/voicegpt/&name=voicegpt&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/05/11/voicegpt/&t=voicegpt"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#voicegpt"><span class="toc-number">1.</span> <span class="toc-text">voicegpt</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#This-is-a-python-file-allowing-you-to-talk-with-chatgpt-using-bark-whisper-and-chatgptAPI"><span class="toc-number">1.1.</span> <span class="toc-text">This is a python file allowing you to talk with chatgpt, using bark, whisper and chatgptAPI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configure-the-environment"><span class="toc-number">1.2.</span> <span class="toc-text">Configure the environment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Installation"><span class="toc-number">1.3.</span> <span class="toc-text">Installation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BASE"><span class="toc-number">1.3.1.</span> <span class="toc-text">BASE</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#whisper"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">whisper</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bark"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">bark</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#chatgpt-API"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">chatgpt API</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#In-short"><span class="toc-number">1.3.2.</span> <span class="toc-text">In short</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#whisper-1"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">whisper</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bark-1"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">bark</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Chatgpt-API"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">Chatgpt API</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage"><span class="toc-number">1.4.</span> <span class="toc-text">Usage</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        voicegpt
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">ch4r1ty</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-05-11T13:28:07.000Z" itemprop="datePublished">2023-05-11</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="voicegpt"><a href="#voicegpt" class="headerlink" title="voicegpt"></a>voicegpt</h1><h2 id="This-is-a-python-file-allowing-you-to-talk-with-chatgpt-using-bark-whisper-and-chatgptAPI"><a href="#This-is-a-python-file-allowing-you-to-talk-with-chatgpt-using-bark-whisper-and-chatgptAPI" class="headerlink" title="This is a python file allowing you to talk with chatgpt, using bark, whisper and chatgptAPI"></a>This is a python file allowing you to talk with chatgpt, using bark, whisper and chatgptAPI</h2><h2 id="Configure-the-environment"><a href="#Configure-the-environment" class="headerlink" title="Configure the environment"></a>Configure the environment</h2><p>We highly recommend you deploy the new project in a brand-new virtual environment. let’s say, name of the new environment below is <strong>voicegpt</strong>:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n voicegpt</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate voicegpt</span><br></pre></td></tr></table></figure>
+
+<p>Fork and access the project file:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:ch4r1ty/voicegpt.git</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd voicegpt</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>Based on whisper and bark, installing relevant packages is required. You can find more information on their pages:</p>
+<h3 id="BASE"><a href="#BASE" class="headerlink" title="BASE"></a>BASE</h3><h4 id="whisper"><a href="#whisper" class="headerlink" title="whisper"></a>whisper</h4><p><a target="_blank" rel="noopener" href="https://github.com/openai/whisper">https://github.com/openai/whisper</a></p>
+<h4 id="bark"><a href="#bark" class="headerlink" title="bark"></a>bark</h4><p><a target="_blank" rel="noopener" href="https://github.com/suno-ai/bark">https://github.com/suno-ai/bark</a></p>
+<h4 id="chatgpt-API"><a href="#chatgpt-API" class="headerlink" title="chatgpt API"></a>chatgpt API</h4><p><a target="_blank" rel="noopener" href="https://platform.openai.com/account/api-keys">https://platform.openai.com/account/api-keys</a></p>
+<h3 id="In-short"><a href="#In-short" class="headerlink" title="In short"></a>In short</h3><p>In short, you have to run these commands for a basic usage:</p>
+<h4 id="whisper-1"><a href="#whisper-1" class="headerlink" title="whisper"></a>whisper</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -U openai-whisper</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">on Ubuntu or Debian</span></span><br><span class="line">sudo apt update &amp;&amp; sudo apt install ffmpeg</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">on Arch Linux</span></span><br><span class="line">sudo pacman -S ffmpeg</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">on MacOS using Homebrew (https://brew.sh/)</span></span><br><span class="line">brew install ffmpeg</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">on Windows using Chocolatey (https://chocolatey.org/)</span></span><br><span class="line">choco install ffmpeg</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">on Windows using Scoop (https://scoop.sh/)</span></span><br><span class="line">scoop install ffmpeg</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install setuptools-rust</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="bark-1"><a href="#bark-1" class="headerlink" title="bark"></a>bark</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/suno-ai/bark</span><br><span class="line">cd bark &amp;&amp; pip install . </span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Chatgpt-API"><a href="#Chatgpt-API" class="headerlink" title="Chatgpt API"></a>Chatgpt API</h4><p>You also need an openai key, which you may get for free on this website:</p>
+<p><a target="_blank" rel="noopener" href="https://platform.openai.com/account/api-keys">https://platform.openai.com/account/api-keys</a></p>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>These revise of code are also required:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># chatgpt api</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># in &quot;&quot; is your openai api key</span></span><br><span class="line"></span><br><span class="line">openai.api_key = <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># whisper api</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># replace the &#x27;tiny&#x27; with different models below</span></span><br><span class="line"></span><br><span class="line">model = whisper.load_model(<span class="string">&quot;tiny&quot;</span>)</span><br><span class="line">result = model.transcribe(<span class="string">&quot;audio.mp3&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(result[<span class="string">&quot;text&quot;</span>])</span><br></pre></td></tr></table></figure>
+
+<p>![Screen Shot 2023-05-11 at 21.22.46](&#x2F;Users&#x2F;ch4r1ty&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;Screen Shot 2023-05-11 at 21.22.46.png)</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#voicegpt"><span class="toc-number">1.</span> <span class="toc-text">voicegpt</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#This-is-a-python-file-allowing-you-to-talk-with-chatgpt-using-bark-whisper-and-chatgptAPI"><span class="toc-number">1.1.</span> <span class="toc-text">This is a python file allowing you to talk with chatgpt, using bark, whisper and chatgptAPI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configure-the-environment"><span class="toc-number">1.2.</span> <span class="toc-text">Configure the environment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Installation"><span class="toc-number">1.3.</span> <span class="toc-text">Installation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BASE"><span class="toc-number">1.3.1.</span> <span class="toc-text">BASE</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#whisper"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">whisper</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bark"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">bark</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#chatgpt-API"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">chatgpt API</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#In-short"><span class="toc-number">1.3.2.</span> <span class="toc-text">In short</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#whisper-1"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">whisper</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bark-1"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">bark</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Chatgpt-API"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">Chatgpt API</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage"><span class="toc-number">1.4.</span> <span class="toc-text">Usage</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/05/11/voicegpt/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/05/11/voicegpt/&text=voicegpt"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/05/11/voicegpt/&title=voicegpt"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/05/11/voicegpt/&is_video=false&description=voicegpt"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=voicegpt&body=Check out this article: http://example.com/2023/05/11/voicegpt/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/05/11/voicegpt/&title=voicegpt"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/05/11/voicegpt/&title=voicegpt"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/05/11/voicegpt/&title=voicegpt"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/05/11/voicegpt/&title=voicegpt"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/05/11/voicegpt/&name=voicegpt&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/05/11/voicegpt/&t=voicegpt"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2023
+    ch4r1ty
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
