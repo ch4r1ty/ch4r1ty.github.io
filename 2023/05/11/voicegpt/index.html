@@ -14,7 +14,7 @@
 <meta property="og:description" content="voicegptThis is a python file allowing you to talk with chatgpt, using bark, whisper and chatgptAPIConfigure the environmentWe highly recommend you deploy the new project in a brand-new virtual enviro">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-05-11T13:28:07.000Z">
-<meta property="article:modified_time" content="2023-05-11T13:28:50.636Z">
+<meta property="article:modified_time" content="2023-05-11T13:54:52.599Z">
 <meta property="article:author" content="ch4r1ty">
 <meta name="twitter:card" content="summary">
     
@@ -73,6 +73,8 @@
     <br/>
     <span id="actions">
       <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2023/07/24/intership-day01/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" aria-label="Next post" href="/2023/05/04/GRE-reading/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -178,7 +180,58 @@
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># whisper api</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># replace the &#x27;tiny&#x27; with different models below</span></span><br><span class="line"></span><br><span class="line">model = whisper.load_model(<span class="string">&quot;tiny&quot;</span>)</span><br><span class="line">result = model.transcribe(<span class="string">&quot;audio.mp3&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(result[<span class="string">&quot;text&quot;</span>])</span><br></pre></td></tr></table></figure>
 
-<p>![Screen Shot 2023-05-11 at 21.22.46](&#x2F;Users&#x2F;ch4r1ty&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;Screen Shot 2023-05-11 at 21.22.46.png)</p>
+<table>
+<thead>
+<tr>
+<th>Size</th>
+<th>Parameters</th>
+<th>English-only model</th>
+<th>Multilingual model</th>
+<th>Required VRAM</th>
+<th>Relative speed</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tiny</td>
+<td>39 M</td>
+<td><code>tiny.en</code></td>
+<td><code>tiny</code></td>
+<td>~1 GB</td>
+<td>~32x</td>
+</tr>
+<tr>
+<td>base</td>
+<td>74 M</td>
+<td><code>base.en</code></td>
+<td><code>base</code></td>
+<td>~1 GB</td>
+<td>~16x</td>
+</tr>
+<tr>
+<td>small</td>
+<td>244 M</td>
+<td><code>small.en</code></td>
+<td><code>small</code></td>
+<td>~2 GB</td>
+<td>~6x</td>
+</tr>
+<tr>
+<td>medium</td>
+<td>769 M</td>
+<td><code>medium.en</code></td>
+<td><code>medium</code></td>
+<td>~5 GB</td>
+<td>~2x</td>
+</tr>
+<tr>
+<td>large</td>
+<td>1550 M</td>
+<td>N&#x2F;A</td>
+<td><code>large</code></td>
+<td>~10 GB</td>
+<td>1x</td>
+</tr>
+</tbody></table>
 
   </div>
 </article>
