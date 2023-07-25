@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="1、需求分析1.1 平台端&#x2F;后端商户登录  提供账号和密码登录功能，商户可以通过输入正确的账号和密码来登录平台后台管理系统。  公告管理  在首页上发布公告、广告，例如特别优惠、系统维护等事项。 在首页发布资讯，滚动方式发布一个月内消息  商户管理  审核商户入驻申请、导入引进的商家 对商户进行管理，包括查看商户信息、冻结解冻商户。  数据统计和分析  收集、统计和分析商户和平台的各项数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Internship-day02">
+<meta property="og:url" content="http://example.com/2023/07/25/Internship-day02/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、需求分析1.1 平台端&#x2F;后端商户登录  提供账号和密码登录功能，商户可以通过输入正确的账号和密码来登录平台后台管理系统。  公告管理  在首页上发布公告、广告，例如特别优惠、系统维护等事项。 在首页发布资讯，滚动方式发布一个月内消息  商户管理  审核商户入驻申请、导入引进的商家 对商户进行管理，包括查看商户信息、冻结解冻商户。  数据统计和分析  收集、统计和分析商户和平台的各项数">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-07-25T09:31:38.000Z">
+<meta property="article:modified_time" content="2023-07-25T09:32:09.387Z">
+<meta property="article:author" content="ch4r1ty">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Internship-day02</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/07/24/internship-day01/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/07/25/Internship-day02/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/07/25/Internship-day02/&text=Internship-day02"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/07/25/Internship-day02/&title=Internship-day02"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/07/25/Internship-day02/&is_video=false&description=Internship-day02"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Internship-day02&body=Check out this article: http://example.com/2023/07/25/Internship-day02/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/07/25/Internship-day02/&title=Internship-day02"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/07/25/Internship-day02/&title=Internship-day02"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/07/25/Internship-day02/&title=Internship-day02"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/07/25/Internship-day02/&title=Internship-day02"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/07/25/Internship-day02/&name=Internship-day02&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/07/25/Internship-day02/&t=Internship-day02"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">1、需求分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%B9%B3%E5%8F%B0%E7%AB%AF-x2F-%E5%90%8E%E7%AB%AF"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 平台端&#x2F;后端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%E5%95%86%E6%88%B7%E7%AB%AF-x2F-%E5%90%8E%E7%AB%AF"><span class="toc-number">1.2.</span> <span class="toc-text">1.1.2 商户端&#x2F;后端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-%E7%94%A8%E6%88%B7%E7%AB%AF-x2F-%E5%89%8D%E7%AB%AF"><span class="toc-number">1.3.</span> <span class="toc-text">1.1.3 用户端&#x2F;前端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">2、逻辑设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 属性描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%85%B3%E7%B3%BB%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 关系描述</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Internship-day02
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">ch4r1ty</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-07-25T09:31:38.000Z" itemprop="datePublished">2023-07-25</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="1、需求分析"><a href="#1、需求分析" class="headerlink" title="1、需求分析"></a>1、需求分析</h2><h3 id="1-1-平台端-x2F-后端"><a href="#1-1-平台端-x2F-后端" class="headerlink" title="1.1 平台端&#x2F;后端"></a>1.1 平台端&#x2F;后端</h3><p><strong>商户登录</strong></p>
+<ul>
+<li>提供账号和密码登录功能，商户可以通过输入正确的账号和密码来登录平台后台管理系统。</li>
+</ul>
+<p><strong>公告管理</strong></p>
+<ul>
+<li>在首页上发布公告、广告，例如特别优惠、系统维护等事项。</li>
+<li>在首页发布资讯，滚动方式发布一个月内消息</li>
+</ul>
+<p><strong>商户管理</strong></p>
+<ul>
+<li>审核商户入驻申请、导入引进的商家</li>
+<li>对商户进行管理，包括查看商户信息、冻结解冻商户。</li>
+</ul>
+<p><strong>数据统计和分析</strong></p>
+<ul>
+<li>收集、统计和分析商户和平台的各项数据，例如商户注册数量、订单数量、销售额等指标，以协助平台方进行运营决策和监控。</li>
+</ul>
+<p><strong>营销活动管理</strong></p>
+<ul>
+<li>创建和管理营销活动的功能，例如特价促销、满减活动等，包括活动时间设置、参与商户管理等。</li>
+<li>优惠券设置：发放、核销、统计（按地区）</li>
+</ul>
+<p><strong>消息通知</strong></p>
+<ul>
+<li>向商户发送重要通知、平台更新等信息，以确保商户能及时收到有关的通知公告。</li>
+</ul>
+<h3 id="1-1-2-商户端-x2F-后端"><a href="#1-1-2-商户端-x2F-后端" class="headerlink" title="1.1.2 商户端&#x2F;后端"></a>1.1.2 商户端&#x2F;后端</h3><p><strong>商户注册</strong></p>
+<ul>
+<li>提供商户注册和登录功能，包括用户名、密码、联系方式等信息，并进行商户身份的审核和认证。</li>
+</ul>
+<p><strong>商户基本信息管理</strong></p>
+<ul>
+<li>允许商户管理个人信息，包括修改餐厅基本资料（如餐厅名称、地址、联系方式）、上传餐厅Logo或照片等。</li>
+<li>提供修改密码的功能，确保商户账号的安全性和可靠性。</li>
+</ul>
+<p><strong>商品管理</strong></p>
+<ul>
+<li>允许商户对餐厅的商品进行增删改查操作，包括菜品的名称、价格、描述、推荐评分（0-5）、标签等信息。</li>
+<li>允许商户将菜品标注为上线或下线，以控制菜品在平台的展示状态。</li>
+</ul>
+<p><strong>营销活动管理</strong></p>
+<ul>
+<li>提供创建促销活动的功能，例如折扣、满减等，并设置活动的开始和结束时间、参与条件等。</li>
+</ul>
+<p><strong>反馈与意见收集</strong></p>
+<ul>
+<li>允许商户收集和管理用户的反馈和意见，以改进服务质量和用户体验。</li>
+<li>提供反馈回复的功能，商户可以与用户进行沟通和解决问题。</li>
+</ul>
+<p><strong>数据统计和分析</strong></p>
+<ul>
+<li>收集并统计用户点击量、商品点击量、订单发生时间等数据，提供数据报表和分析工具，帮助商户了解业务状况和用户行为，以做出更好的经营决策。</li>
+</ul>
+<p><strong>订单管理</strong></p>
+<ul>
+<li>允许商户查看、处理和管理接收到的订单，包括订单详情、订单状态更新等，并提供订单导出和数据分析的功能。</li>
+</ul>
+<p><strong>消息通知</strong></p>
+<ul>
+<li>向商户发送订单通知、系统更新等重要信息，确保商户能够及时了解和处理相关事务。</li>
+</ul>
+<h3 id="1-1-3-用户端-x2F-前端"><a href="#1-1-3-用户端-x2F-前端" class="headerlink" title="1.1.3 用户端&#x2F;前端"></a>1.1.3 用户端&#x2F;前端</h3><p><strong>用户注册和登录</strong></p>
+<ul>
+<li>提供用户注册和登录功能</li>
+</ul>
+<p><strong>个人账户管理</strong></p>
+<ul>
+<li>允许用户管理个人信息，包括修改个人资料、修改密码等。</li>
+</ul>
+<p><strong>餐厅列表和搜索</strong></p>
+<ul>
+<li>展示餐厅的列表，包括餐厅名称、地址、评分</li>
+<li>提供搜索功能</li>
+<li>提供餐厅分类功能（筛选）</li>
+</ul>
+<p><strong>菜单浏览和点餐</strong></p>
+<ul>
+<li>展示餐厅的菜单，包括菜品名称、价格、描述等</li>
+<li>允许用户选择菜品并添加到购物车。</li>
+</ul>
+<p><strong>购物车管理</strong></p>
+<ul>
+<li>提供购物车页面，展示用户添加的菜品以及数量</li>
+<li>允许用户修改或删除菜品。</li>
+</ul>
+<p><strong>评价和评论</strong></p>
+<ul>
+<li>允许用户对餐厅和菜品进行评价和评论。</li>
+</ul>
+<p><strong>客服和反馈</strong></p>
+<ul>
+<li>提供联系客服的方式。</li>
+</ul>
+<h2 id="2、逻辑设计"><a href="#2、逻辑设计" class="headerlink" title="2、逻辑设计"></a>2、逻辑设计</h2><h3 id="2-1-属性描述"><a href="#2-1-属性描述" class="headerlink" title="2.1 属性描述"></a>2.1 属性描述</h3><p>实体以及属性信息如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th>名称</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td>平台</td>
+<td><strong>平台名称</strong>、管理员账号、管理员密码</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td>商户</td>
+<td><strong>商户id</strong>、商户名称、商户logo、商户地址、<em>商户ID</em>、商户状态、<em>联系方式</em>、<em>邮箱</em>、<em>商品id</em>、商户评分、商户优选标志</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td>用户</td>
+<td><strong>用户id</strong>、用户名称、密码、电话号码、身份证、邮箱</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td>订单</td>
+<td><strong>订单id</strong>、订单时间、<em>商户id</em>、<em>用户id</em>、订单内容</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td>公告</td>
+<td><strong>公告id</strong>、发布时间、<em>管理员id、</em>公告内容</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td>营销活动</td>
+<td><strong>营销活动id</strong>、营销活动持续时间、营销活动内容</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td>商品</td>
+<td><strong>商品id</strong>、商品名称、商品照片、商品评分、商品描述、库存量、销售量、单价、商品分类、商品优选标志、上架标志</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td>评论</td>
+<td><strong>评论id</strong>、<em>用户id、商品id、商户id</em>、评论时间、评论内容、点赞数、是否匿名</td>
+</tr>
+</tbody></table>
+<p>联系</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>名称</th>
+<th>动作</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>平台审核商户申请</td>
+<td>审核</td>
+<td>（平台名称，申请id）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>平台审查订单</td>
+<td>审查</td>
+<td>（平台名称，订单id）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>平台发布公告</td>
+<td>发布</td>
+<td>（平台名称，公告id）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>平台举办营销活动</td>
+<td>举办</td>
+<td>（平台id，营销活动id）</td>
+</tr>
+<tr>
+<td>5</td>
+<td>平台发表评论</td>
+<td>发表</td>
+<td>（平台id，评论id）</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>商户上架商品</td>
+<td>上架</td>
+<td>（商户id，商品id）</td>
+</tr>
+<tr>
+<td>8</td>
+<td>商户修改商品</td>
+<td>修改</td>
+<td>（商户id，商品id）</td>
+</tr>
+<tr>
+<td>9</td>
+<td>商户发表评论</td>
+<td>发表</td>
+<td>（商户id，评论id）</td>
+</tr>
+<tr>
+<td>10</td>
+<td>商户检查订单</td>
+<td>检查</td>
+<td>（商户id，订单id）</td>
+</tr>
+<tr>
+<td>11</td>
+<td>用户购买商品</td>
+<td>购买</td>
+<td>（用户id，商品id，商户id）</td>
+</tr>
+<tr>
+<td>12</td>
+<td>用户检查订单</td>
+<td>检查</td>
+<td>（用户id，订单id）</td>
+</tr>
+<tr>
+<td>13</td>
+<td>用户发表评论</td>
+<td>发表</td>
+<td>（用户id，评论id）</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>用户评价商户</td>
+<td>评价</td>
+<td>（用户id，商户id）</td>
+</tr>
+<tr>
+<td>16</td>
+<td>用户检查订单</td>
+<td>检查</td>
+<td>（用户id，订单id）</td>
+</tr>
+</tbody></table>
+<h3 id="2-2-关系描述"><a href="#2-2-关系描述" class="headerlink" title="2.2 关系描述"></a>2.2 关系描述</h3><p>一个平台拥有多个管理员账户</p>
+<p>一个平台审核多个商户申请</p>
+<p>一个平台发布审核多个订单</p>
+<p>一个平台举办多个营销活动</p>
+<p>一个平台发表多个评论</p>
+<p>一个商户申请多个餐厅</p>
+<p>一个餐厅上架多个产品</p>
+<p>一个餐厅修改多个产品</p>
+<p>一个餐厅发表多个评论</p>
+<p>一个餐厅检查多个订单</p>
+<p>一个用户购买多个商品</p>
+<p>一个用户发表多个评论</p>
+<p>一个用户评价多个餐厅</p>
+<p>一个用户评价多个商户</p>
+<p>一个用户检查多个订单</p>
+<p>前后端</p>
+<p>功能清单+角色用例+流程图</p>
+<p>字段、<strong>功能按钮</strong>（逻辑）、查询条件、跳转逻辑</p>
+<p>UI原型图</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">1、需求分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%B9%B3%E5%8F%B0%E7%AB%AF-x2F-%E5%90%8E%E7%AB%AF"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 平台端&#x2F;后端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%E5%95%86%E6%88%B7%E7%AB%AF-x2F-%E5%90%8E%E7%AB%AF"><span class="toc-number">1.2.</span> <span class="toc-text">1.1.2 商户端&#x2F;后端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-%E7%94%A8%E6%88%B7%E7%AB%AF-x2F-%E5%89%8D%E7%AB%AF"><span class="toc-number">1.3.</span> <span class="toc-text">1.1.3 用户端&#x2F;前端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">2、逻辑设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 属性描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%85%B3%E7%B3%BB%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 关系描述</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/07/25/Internship-day02/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/07/25/Internship-day02/&text=Internship-day02"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/07/25/Internship-day02/&title=Internship-day02"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/07/25/Internship-day02/&is_video=false&description=Internship-day02"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Internship-day02&body=Check out this article: http://example.com/2023/07/25/Internship-day02/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/07/25/Internship-day02/&title=Internship-day02"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/07/25/Internship-day02/&title=Internship-day02"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/07/25/Internship-day02/&title=Internship-day02"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/07/25/Internship-day02/&title=Internship-day02"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/07/25/Internship-day02/&name=Internship-day02&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/07/25/Internship-day02/&t=Internship-day02"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2023
+    ch4r1ty
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
