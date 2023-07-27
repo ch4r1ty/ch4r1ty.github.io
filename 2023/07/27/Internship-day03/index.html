@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="1、需求分析1.1 平台端&#x2F;后端商户登录  提供账号和密码登录功能，商户可以通过输入正确的账号和密码来登录平台后台管理系统。  公告管理  在首页上发布公告、广告，例如特别优惠、系统维护等事项。 在首页发布资讯，滚动方式发布一个月内消息  商户管理  审核商户入驻申请、导入引进的商家 对商户进行管理，包括查看商户信息、冻结解冻商户。  数据统计和分析  收集、统计和分析商户和平台的各项数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Internship-day03">
+<meta property="og:url" content="http://example.com/2023/07/27/Internship-day03/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、需求分析1.1 平台端&#x2F;后端商户登录  提供账号和密码登录功能，商户可以通过输入正确的账号和密码来登录平台后台管理系统。  公告管理  在首页上发布公告、广告，例如特别优惠、系统维护等事项。 在首页发布资讯，滚动方式发布一个月内消息  商户管理  审核商户入驻申请、导入引进的商家 对商户进行管理，包括查看商户信息、冻结解冻商户。  数据统计和分析  收集、统计和分析商户和平台的各项数">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-07-27T00:34:21.000Z">
+<meta property="article:modified_time" content="2023-07-27T00:35:25.796Z">
+<meta property="article:author" content="ch4r1ty">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Internship-day03</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/07/25/Internship-day02/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/07/27/Internship-day03/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/07/27/Internship-day03/&text=Internship-day03"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/07/27/Internship-day03/&title=Internship-day03"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/07/27/Internship-day03/&is_video=false&description=Internship-day03"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Internship-day03&body=Check out this article: http://example.com/2023/07/27/Internship-day03/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/07/27/Internship-day03/&title=Internship-day03"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/07/27/Internship-day03/&title=Internship-day03"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/07/27/Internship-day03/&title=Internship-day03"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/07/27/Internship-day03/&title=Internship-day03"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/07/27/Internship-day03/&name=Internship-day03&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/07/27/Internship-day03/&t=Internship-day03"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">1、需求分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%B9%B3%E5%8F%B0%E7%AB%AF-x2F-%E5%90%8E%E7%AB%AF"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 平台端&#x2F;后端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%E5%95%86%E6%88%B7%E7%AB%AF-x2F-%E5%90%8E%E7%AB%AF"><span class="toc-number">1.2.</span> <span class="toc-text">1.1.2 商户端&#x2F;后端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-%E7%94%A8%E6%88%B7%E7%AB%AF-x2F-%E5%89%8D%E7%AB%AF"><span class="toc-number">1.3.</span> <span class="toc-text">1.1.3 用户端&#x2F;前端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">2、逻辑设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 属性描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%85%B3%E7%B3%BB%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 关系描述</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E5%8A%9F%E8%83%BD%E6%B8%85%E5%8D%95"><span class="toc-number">3.</span> <span class="toc-text">3、功能清单</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%B9%B3%E5%8F%B0%E7%AB%AFpc"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 平台端pc</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-%E4%B8%BB%E9%A1%B5%EF%BC%88%E5%B7%A5%E4%BD%9C%E5%8F%B0%EF%BC%89"><span class="toc-number">3.1.1.</span> <span class="toc-text">3.1.1 主页（工作台）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-%E5%85%AC%E5%91%8A"><span class="toc-number">3.1.2.</span> <span class="toc-text">3.1.2 公告</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-%E5%95%86%E6%88%B7%E7%AE%A1%E7%90%86%EF%BC%88%E5%AE%A1%E6%A0%B8-%E5%BE%85%E5%AE%A1%E6%A0%B8%E5%88%97%E8%A1%A8%EF%BC%8C%E5%AE%A1%E6%A0%B8%E3%80%82%E5%95%86%E5%AE%B6%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E5%88%97%E8%A1%A8%EF%BC%88%E6%96%B0%E5%A2%9E%E3%80%81%E5%88%A0%E9%99%A4%E3%80%81%E7%BC%96%E8%BE%91%E3%80%81%E6%9F%A5%E8%AF%A2%EF%BC%89%EF%BC%89"><span class="toc-number">3.1.3.</span> <span class="toc-text">3.1.3 商户管理（审核-待审核列表，审核。商家基本信息列表（新增、删除、编辑、查询））</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-4-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1"><span class="toc-number">3.1.4.</span> <span class="toc-text">3.1.4 数据统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-5-%E6%B4%BB%E5%8A%A8%EF%BC%88%E4%BC%98%E6%83%A0%E5%88%B8%EF%BC%89"><span class="toc-number">3.1.5.</span> <span class="toc-text">3.1.5 活动（优惠券）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-5-1-%E6%B4%BB%E5%8A%A8%E7%BB%9F%E8%AE%A1"><span class="toc-number">3.1.5.1.</span> <span class="toc-text">3.1.5.1 活动统计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-5-2-%E6%96%B0%E5%BB%BA%E6%B4%BB%E5%8A%A8"><span class="toc-number">3.1.5.2.</span> <span class="toc-text">3.1.5.2 新建活动</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E7%94%A8%E6%88%B7%E7%AB%AF%E5%89%8D%E7%AB%AF"><span class="toc-number">3.2.</span> <span class="toc-text">3.3 用户端前端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-%E7%99%BB%E9%99%86"><span class="toc-number">3.2.1.</span> <span class="toc-text">3.3.1 登陆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-%E9%A6%96%E9%A1%B5"><span class="toc-number">3.2.2.</span> <span class="toc-text">3.3.2 首页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-3-%E9%A4%90%E5%8E%85%E9%80%89%E6%8B%A9"><span class="toc-number">3.2.3.</span> <span class="toc-text">3.3.3 餐厅选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-4-%E9%A4%90%E5%8E%85%E5%86%85"><span class="toc-number">3.2.4.</span> <span class="toc-text">3.3.4 餐厅内</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-4-1-%E9%A4%90%E5%8E%85%E5%86%85%E9%A6%96%E9%A1%B5"><span class="toc-number">3.2.4.1.</span> <span class="toc-text">3.3.4.1 餐厅内首页</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-4-2-%E8%B4%AD%E7%89%A9%E8%BD%A6%E7%AE%A1%E7%90%86"><span class="toc-number">3.2.4.2.</span> <span class="toc-text">3.3.4.2 购物车管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-4-3-%E5%95%86%E5%93%81%E4%BF%A1%E6%81%AF"><span class="toc-number">3.2.4.3.</span> <span class="toc-text">3.3.4.3 商品信息</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-5-%E8%AE%A2%E5%8D%95"><span class="toc-number">3.2.5.</span> <span class="toc-text">3.3.5 订单</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E5%8A%9F%E8%83%BD%E6%B8%85%E5%8D%95-1"><span class="toc-number">4.</span> <span class="toc-text">3、功能清单*</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%B9%B3%E5%8F%B0%E7%AB%AF%E5%89%8D%E7%AB%AF"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 平台端前端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-%E4%B8%BB%E9%A1%B5%EF%BC%88%E5%B7%A5%E4%BD%9C%E5%8F%B0%EF%BC%89-1"><span class="toc-number">4.1.1.</span> <span class="toc-text">3.1.1 主页（工作台）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-%E5%85%AC%E5%91%8A%E7%AE%A1%E7%90%86"><span class="toc-number">4.1.2.</span> <span class="toc-text">3.1.2 公告管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-%E5%95%86%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number">4.1.3.</span> <span class="toc-text">3.1.3 商户管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-4-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1-1"><span class="toc-number">4.1.4.</span> <span class="toc-text">3.1.4 数据统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-5-%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%EF%BC%88%E4%BC%98%E6%83%A0%E5%88%B8%EF%BC%89"><span class="toc-number">4.1.5.</span> <span class="toc-text">3.1.5 活动管理（优惠券）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-5-1-%E6%B4%BB%E5%8A%A8%E7%BB%9F%E8%AE%A1-1"><span class="toc-number">4.1.5.1.</span> <span class="toc-text">3.1.5.1 活动统计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-5-2-%E6%96%B0%E5%BB%BA%E6%B4%BB%E5%8A%A8-1"><span class="toc-number">4.1.5.2.</span> <span class="toc-text">3.1.5.2 新建活动</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%94%A8%E6%88%B7%E7%AB%AF%E5%89%8D%E7%AB%AF"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 用户端前端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-%E7%99%BB%E9%99%86"><span class="toc-number">4.2.1.</span> <span class="toc-text">3.2.1 登陆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-%E9%A6%96%E9%A1%B5"><span class="toc-number">4.2.2.</span> <span class="toc-text">3.2.2 首页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-%E9%A4%90%E5%8E%85%E9%80%89%E6%8B%A9"><span class="toc-number">4.2.3.</span> <span class="toc-text">3.2.3 餐厅选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-4-%E9%A4%90%E5%8E%85%E8%AF%A6%E6%83%85"><span class="toc-number">4.2.4.</span> <span class="toc-text">3.2.4 餐厅详情</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-4-1-%E9%A4%90%E5%8E%85%E9%A6%96%E9%A1%B5"><span class="toc-number">4.2.4.1.</span> <span class="toc-text">3.2.4.1 餐厅首页</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-4-2-%E8%B4%AD%E7%89%A9%E8%BD%A6%E7%AE%A1%E7%90%86"><span class="toc-number">4.2.4.2.</span> <span class="toc-text">3.2.4.2 购物车管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-4-3-%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85"><span class="toc-number">4.2.4.3.</span> <span class="toc-text">3.2.4.3 商品详情</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-5-%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86"><span class="toc-number">4.2.5.</span> <span class="toc-text">3.2.5 订单管理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%95%86%E6%88%B7%E7%AB%AF%E5%89%8D%E7%AB%AF"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 商户端前端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-%E5%95%86%E6%88%B7%E6%B3%A8%E5%86%8C%E4%B8%8E%E7%99%BB%E5%BD%95"><span class="toc-number">4.3.1.</span> <span class="toc-text">3.3.1 商户注册与登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-%E5%95%86%E6%88%B7%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86"><span class="toc-number">4.3.2.</span> <span class="toc-text">3.3.2 商户信息管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-3-%E5%95%86%E5%93%81%E7%AE%A1%E7%90%86"><span class="toc-number">4.3.3.</span> <span class="toc-text">3.3.3 商品管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-4-%E8%90%A5%E9%94%80%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86"><span class="toc-number">4.3.4.</span> <span class="toc-text">3.3.4 营销活动管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-5-%E5%8F%8D%E9%A6%88%E4%B8%8E%E6%84%8F%E8%A7%81%E7%AE%A1%E7%90%86"><span class="toc-number">4.3.5.</span> <span class="toc-text">3.3.5 反馈与意见管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-6-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90"><span class="toc-number">4.3.6.</span> <span class="toc-text">3.3.6 数据统计与分析</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-6-1-%E6%95%B0%E6%8D%AE%E6%A6%82%E8%A7%88"><span class="toc-number">4.3.6.1.</span> <span class="toc-text">3.3.6.1 数据概览</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-6-2-%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE"><span class="toc-number">4.3.6.2.</span> <span class="toc-text">3.3.6.2 销售数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-6-3-%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE"><span class="toc-number">4.3.6.3.</span> <span class="toc-text">3.3.6.3 访问数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-6-4-%E7%94%A8%E6%88%B7%E6%95%B0%E6%8D%AE"><span class="toc-number">4.3.6.4.</span> <span class="toc-text">3.3.6.4 用户数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-6-5-%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA"><span class="toc-number">4.3.6.5.</span> <span class="toc-text">3.3.6.5 数据导出</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-7-%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86"><span class="toc-number">4.3.7.</span> <span class="toc-text">3.3.7 订单管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-8-%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5"><span class="toc-number">4.3.8.</span> <span class="toc-text">3.3.8 消息通知</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E9%A1%B5%E9%9D%A2%E8%AE%BE%E8%AE%A1"><span class="toc-number">5.</span> <span class="toc-text">4、页面设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%B9%B3%E5%8F%B0%E7%AB%AF%E5%89%8D%E7%AB%AF"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 平台端前端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1-%E4%B8%BB%E9%A1%B5%EF%BC%88%E5%B7%A5%E4%BD%9C%E5%8F%B0%EF%BC%89"><span class="toc-number">5.1.1.</span> <span class="toc-text">4.1.1 主页（工作台）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-%E5%85%AC%E5%91%8A%E7%AE%A1%E7%90%86"><span class="toc-number">5.1.2.</span> <span class="toc-text">4.1.2 公告管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-3-%E5%95%86%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number">5.1.3.</span> <span class="toc-text">4.1.3 商户管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-4-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1"><span class="toc-number">5.1.4.</span> <span class="toc-text">4.1.4 数据统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-5-%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%EF%BC%88%E4%BC%98%E6%83%A0%E5%88%B8%EF%BC%89"><span class="toc-number">5.1.5.</span> <span class="toc-text">4.1.5 活动管理（优惠券）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E7%94%A8%E6%88%B7%E7%AB%AF%E5%89%8D%E7%AB%AF"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 用户端前端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-1-%E7%99%BB%E9%99%86"><span class="toc-number">5.2.1.</span> <span class="toc-text">4.2.1 登陆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-2-%E9%A6%96%E9%A1%B5"><span class="toc-number">5.2.2.</span> <span class="toc-text">4.2.2 首页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-3-%E9%A4%90%E5%8E%85%E9%80%89%E6%8B%A9"><span class="toc-number">5.2.3.</span> <span class="toc-text">4.2.3 餐厅选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-4-%E9%A4%90%E5%8E%85%E5%86%85"><span class="toc-number">5.2.4.</span> <span class="toc-text">4.2.4 餐厅内</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-5-%E8%AE%A2%E5%8D%95"><span class="toc-number">5.2.5.</span> <span class="toc-text">4.2.5 订单</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E5%95%86%E6%88%B7%E7%AB%AF%E5%89%8D%E7%AB%AF"><span class="toc-number">5.3.</span> <span class="toc-text">4.3 商户端前端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-1-%E7%99%BB%E9%99%86"><span class="toc-number">5.3.1.</span> <span class="toc-text">4.3.1 登陆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-2-%E5%95%86%E6%88%B7%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86"><span class="toc-number">5.3.2.</span> <span class="toc-text">4.3.2 商户信息管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-3-%E5%95%86%E5%93%81%E7%AE%A1%E7%90%86"><span class="toc-number">5.3.3.</span> <span class="toc-text">4.3.3 商品管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-4-%E8%90%A5%E9%94%80%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86"><span class="toc-number">5.3.4.</span> <span class="toc-text">4.3.4 营销活动管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-5-%E5%8F%8D%E9%A6%88%E4%B8%8E%E6%84%8F%E8%A7%81%E6%94%B6%E9%9B%86"><span class="toc-number">5.3.5.</span> <span class="toc-text">4.3.5 反馈与意见收集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-6-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90"><span class="toc-number">5.3.6.</span> <span class="toc-text">4.3.6 数据统计与分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-7-%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86"><span class="toc-number">5.3.7.</span> <span class="toc-text">4.3.7 订单管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-8-%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5"><span class="toc-number">5.3.8.</span> <span class="toc-text">4.3.8 消息通知</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Internship-day03
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">ch4r1ty</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-07-27T00:34:21.000Z" itemprop="datePublished">2023-07-27</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="1、需求分析"><a href="#1、需求分析" class="headerlink" title="1、需求分析"></a>1、需求分析</h2><h3 id="1-1-平台端-x2F-后端"><a href="#1-1-平台端-x2F-后端" class="headerlink" title="1.1 平台端&#x2F;后端"></a>1.1 平台端&#x2F;后端</h3><p><strong>商户登录</strong></p>
+<ul>
+<li>提供账号和密码登录功能，商户可以通过输入正确的账号和密码来登录平台后台管理系统。</li>
+</ul>
+<p><strong>公告管理</strong></p>
+<ul>
+<li>在首页上发布公告、广告，例如特别优惠、系统维护等事项。</li>
+<li>在首页发布资讯，滚动方式发布一个月内消息</li>
+</ul>
+<p><strong>商户管理</strong></p>
+<ul>
+<li>审核商户入驻申请、导入引进的商家</li>
+<li>对商户进行管理，包括查看商户信息、冻结解冻商户。</li>
+</ul>
+<p><strong>数据统计和分析</strong></p>
+<ul>
+<li>收集、统计和分析商户和平台的各项数据，例如商户注册数量、订单数量、销售额等指标，以协助平台方进行运营决策和监控。</li>
+</ul>
+<p><strong>营销活动管理</strong></p>
+<ul>
+<li>创建和管理营销活动的功能，例如特价促销、满减活动等，包括活动时间设置、参与商户管理等。</li>
+<li>优惠券设置：发放、核销、统计（按地区）</li>
+</ul>
+<p><strong>消息通知</strong></p>
+<ul>
+<li>向商户发送重要通知、平台更新等信息，以确保商户能及时收到有关的通知公告。</li>
+</ul>
+<h3 id="1-1-2-商户端-x2F-后端"><a href="#1-1-2-商户端-x2F-后端" class="headerlink" title="1.1.2 商户端&#x2F;后端"></a>1.1.2 商户端&#x2F;后端</h3><p><strong>商户注册</strong></p>
+<ul>
+<li>提供商户注册和登录功能，包括用户名、密码、联系方式等信息，并进行商户身份的审核和认证。</li>
+</ul>
+<p><strong>商户基本信息管理</strong></p>
+<ul>
+<li>允许商户管理个人信息，包括修改餐厅基本资料（如餐厅名称、地址、联系方式）、上传餐厅Logo或照片等。</li>
+<li>提供修改密码的功能，确保商户账号的安全性和可靠性。</li>
+</ul>
+<p><strong>商品管理</strong></p>
+<ul>
+<li>允许商户对餐厅的商品进行增删改查操作，包括菜品的名称、价格、描述、推荐评分（0-5）、标签等信息。</li>
+<li>允许商户将菜品标注为上线或下线，以控制菜品在平台的展示状态。</li>
+</ul>
+<p><strong>营销活动管理</strong></p>
+<ul>
+<li>提供创建促销活动的功能，例如折扣、满减等，并设置活动的开始和结束时间、参与条件等。</li>
+</ul>
+<p><strong>反馈与意见收集</strong></p>
+<ul>
+<li>允许商户收集和管理用户的反馈和意见，以改进服务质量和用户体验。</li>
+<li>提供反馈回复的功能，商户可以与用户进行沟通和解决问题。</li>
+</ul>
+<p><strong>数据统计和分析</strong></p>
+<ul>
+<li>收集并统计用户点击量、商品点击量、订单发生时间等数据，提供数据报表和分析工具，帮助商户了解业务状况和用户行为，以做出更好的经营决策。</li>
+</ul>
+<p><strong>订单管理</strong></p>
+<ul>
+<li>允许商户查看、处理和管理接收到的订单，包括订单详情、订单状态更新等，并提供订单导出和数据分析的功能。</li>
+</ul>
+<p><strong>消息通知</strong></p>
+<ul>
+<li>向商户发送订单通知、系统更新等重要信息，确保商户能够及时了解和处理相关事务。</li>
+</ul>
+<h3 id="1-1-3-用户端-x2F-前端"><a href="#1-1-3-用户端-x2F-前端" class="headerlink" title="1.1.3 用户端&#x2F;前端"></a>1.1.3 用户端&#x2F;前端</h3><p><strong>用户注册和登录</strong></p>
+<ul>
+<li>提供用户注册和登录功能</li>
+</ul>
+<p><strong>个人账户管理</strong></p>
+<ul>
+<li>允许用户管理个人信息，包括修改个人资料、修改密码等。</li>
+</ul>
+<p><strong>餐厅列表和搜索</strong></p>
+<ul>
+<li>展示餐厅的列表，包括餐厅名称、地址、评分</li>
+<li>提供搜索功能</li>
+<li>提供餐厅分类功能（筛选）</li>
+</ul>
+<p><strong>菜单浏览和点餐</strong></p>
+<ul>
+<li>展示餐厅的菜单，包括菜品名称、价格、描述等</li>
+<li>允许用户选择菜品并添加到购物车。</li>
+</ul>
+<p><strong>购物车管理</strong></p>
+<ul>
+<li>提供购物车页面，展示用户添加的菜品以及数量</li>
+<li>允许用户修改或删除菜品。</li>
+</ul>
+<p><strong>评价和评论</strong></p>
+<ul>
+<li>允许用户对餐厅和菜品进行评价和评论。</li>
+</ul>
+<p><strong>客服和反馈</strong></p>
+<ul>
+<li>提供联系客服的方式。</li>
+</ul>
+<h2 id="2、逻辑设计"><a href="#2、逻辑设计" class="headerlink" title="2、逻辑设计"></a>2、逻辑设计</h2><h3 id="2-1-属性描述"><a href="#2-1-属性描述" class="headerlink" title="2.1 属性描述"></a>2.1 属性描述</h3><p>实体以及属性信息如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th>名称</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td>平台</td>
+<td><strong>平台名称</strong>、管理员账号、管理员密码</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td>商户</td>
+<td><strong>商户id</strong>、商户名称、商户logo、商户地址、<em>商户ID</em>、商户状态、<em>联系方式</em>、<em>邮箱</em>、<em>商品id</em>、商户评分、商户优选标志</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td>用户</td>
+<td><strong>用户id</strong>、用户名称、密码、电话号码、身份证、邮箱</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td>订单</td>
+<td><strong>订单id</strong>、订单时间、<em>商户id</em>、<em>用户id</em>、订单内容</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td>公告</td>
+<td><strong>公告id</strong>、发布时间、<em>管理员id、</em>公告内容</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td>营销活动</td>
+<td><strong>营销活动id</strong>、营销活动持续时间、营销活动内容</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td>商品</td>
+<td><strong>商品id</strong>、商品名称、商品照片、商品评分、商品描述、库存量、销售量、单价、商品分类、商品优选标志、上架标志</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td>评论</td>
+<td><strong>评论id</strong>、<em>用户id、商品id、商户id</em>、评论时间、评论内容、点赞数、是否匿名</td>
+</tr>
+</tbody></table>
+<p>联系</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>名称</th>
+<th>动作</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>平台审核商户申请</td>
+<td>审核</td>
+<td>（平台名称，申请id）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>平台审查订单</td>
+<td>审查</td>
+<td>（平台名称，订单id）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>平台发布公告</td>
+<td>发布</td>
+<td>（平台名称，公告id）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>平台举办营销活动</td>
+<td>举办</td>
+<td>（平台id，营销活动id）</td>
+</tr>
+<tr>
+<td>5</td>
+<td>平台发表评论</td>
+<td>发表</td>
+<td>（平台id，评论id）</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>商户上架商品</td>
+<td>上架</td>
+<td>（商户id，商品id）</td>
+</tr>
+<tr>
+<td>8</td>
+<td>商户修改商品</td>
+<td>修改</td>
+<td>（商户id，商品id）</td>
+</tr>
+<tr>
+<td>9</td>
+<td>商户发表评论</td>
+<td>发表</td>
+<td>（商户id，评论id）</td>
+</tr>
+<tr>
+<td>10</td>
+<td>商户检查订单</td>
+<td>检查</td>
+<td>（商户id，订单id）</td>
+</tr>
+<tr>
+<td>11</td>
+<td>用户购买商品</td>
+<td>购买</td>
+<td>（用户id，商品id，商户id）</td>
+</tr>
+<tr>
+<td>12</td>
+<td>用户检查订单</td>
+<td>检查</td>
+<td>（用户id，订单id）</td>
+</tr>
+<tr>
+<td>13</td>
+<td>用户发表评论</td>
+<td>发表</td>
+<td>（用户id，评论id）</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>用户评价商户</td>
+<td>评价</td>
+<td>（用户id，商户id）</td>
+</tr>
+<tr>
+<td>16</td>
+<td>用户检查订单</td>
+<td>检查</td>
+<td>（用户id，订单id）</td>
+</tr>
+</tbody></table>
+<h3 id="2-2-关系描述"><a href="#2-2-关系描述" class="headerlink" title="2.2 关系描述"></a>2.2 关系描述</h3><p>一个平台拥有多个管理员账户</p>
+<p>一个平台审核多个商户申请</p>
+<p>一个平台发布审核多个订单</p>
+<p>一个平台举办多个营销活动</p>
+<p>一个平台发表多个评论</p>
+<p>一个商户申请多个餐厅</p>
+<p>一个餐厅上架多个产品</p>
+<p>一个餐厅修改多个产品</p>
+<p>一个餐厅发表多个评论</p>
+<p>一个餐厅检查多个订单</p>
+<p>一个用户购买多个商品</p>
+<p>一个用户发表多个评论</p>
+<p>一个用户评价多个餐厅</p>
+<p>一个用户评价多个商户</p>
+<p>一个用户检查多个订单</p>
+<h2 id="3、功能清单"><a href="#3、功能清单" class="headerlink" title="3、功能清单"></a>3、功能清单</h2><h3 id="3-1-平台端pc"><a href="#3-1-平台端pc" class="headerlink" title="3.1 平台端pc"></a>3.1 平台端pc</h3><h4 id="3-1-1-主页（工作台）"><a href="#3-1-1-主页（工作台）" class="headerlink" title="3.1.1 主页（工作台）"></a>3.1.1 主页（工作台）</h4><ol>
+<li>静态显示当前管理员头像、管理员账号</li>
+<li>显示四个带有链接的图标，链接到1公告管理、2商户管理、3数据统计、4活动</li>
+</ol>
+<h4 id="3-1-2-公告"><a href="#3-1-2-公告" class="headerlink" title="3.1.2 公告"></a>3.1.2 公告</h4><ol>
+<li>按照顺序生成公告id</li>
+<li>选择公告类型：资讯 &#x2F; 广告</li>
+<li>填写公告标题</li>
+<li>填写公告内容、图片</li>
+<li>发布按钮</li>
+<li>以往公告按时间顺序排序显示标题</li>
+</ol>
+<h4 id="3-1-3-商户管理（审核-待审核列表，审核。商家基本信息列表（新增、删除、编辑、查询））"><a href="#3-1-3-商户管理（审核-待审核列表，审核。商家基本信息列表（新增、删除、编辑、查询））" class="headerlink" title="3.1.3 商户管理（审核-待审核列表，审核。商家基本信息列表（新增、删除、编辑、查询））"></a>3.1.3 商户管理（审核-待审核列表，审核。商家基本信息列表（新增、删除、编辑、查询））</h4><ol>
+<li>显示待审核的商户信息，点击信息后，显示名称、标签、时间、下一行确定通过或不通过（标签在商户信息中新建）—列表-审核</li>
+<li>列表-详情</li>
+<li>导入引入的商家，导入名称、标签、</li>
+</ol>
+<h4 id="3-1-4-数据统计"><a href="#3-1-4-数据统计" class="headerlink" title="3.1.4 数据统计"></a>3.1.4 数据统计</h4><ol>
+<li>显示商户入驻数量</li>
+<li>显示注册用户数量、注册趋势（柱状图、折线图）</li>
+<li>显示日活跃用户数量、日活跃用户数量趋势（柱状图、折线图）</li>
+<li>优惠券</li>
+</ol>
+<h4 id="3-1-5-活动（优惠券）"><a href="#3-1-5-活动（优惠券）" class="headerlink" title="3.1.5 活动（优惠券）"></a>3.1.5 活动（优惠券）</h4><h5 id="3-1-5-1-活动统计"><a href="#3-1-5-1-活动统计" class="headerlink" title="3.1.5.1 活动统计"></a>3.1.5.1 活动统计</h5><ol>
+<li>按钮：新建活动-列表-新增 发布 优惠券新增字段。名称 发布数量 使用数量 过期 时效</li>
+</ol>
+<h5 id="3-1-5-2-新建活动"><a href="#3-1-5-2-新建活动" class="headerlink" title="3.1.5.2 新建活动"></a>3.1.5.2 新建活动</h5><ol>
+<li>活动标题、活动内容、活动类型（在此页面新建）</li>
+<li>发布按钮</li>
+<li>页面右侧放滚动的商户、用户，用标签筛选</li>
+</ol>
+<h3 id="3-3-用户端前端"><a href="#3-3-用户端前端" class="headerlink" title="3.3 用户端前端"></a>3.3 用户端前端</h3><h4 id="3-3-1-登陆"><a href="#3-3-1-登陆" class="headerlink" title="3.3.1 登陆"></a>3.3.1 登陆</h4><ol>
+<li>用户输入手机号后，判断是否合法，账号权限，按按钮获取验证码，如果不合法，弹出弹窗</li>
+<li>输入验证码，重新输入按钮</li>
+<li>注册按钮、登陆按钮</li>
+</ol>
+<h4 id="3-3-2-首页"><a href="#3-3-2-首页" class="headerlink" title="3.3.2 首页"></a>3.3.2 首页</h4><ol>
+<li>活动栏、广告栏，点开后进入所有有效活动、广告界面，资讯栏</li>
+<li>提供首页、餐厅、订单、个人中心按钮</li>
+</ol>
+<h4 id="3-3-3-餐厅选择"><a href="#3-3-3-餐厅选择" class="headerlink" title="3.3.3 餐厅选择"></a>3.3.3 餐厅选择</h4><ol>
+<li>搜索栏：模糊搜索</li>
+<li>根据平台对餐厅设置的标签，进行筛选  </li>
+<li>根据地理位置、好评率、价格（正序、倒序）进行排序</li>
+<li>显示餐厅信息（图片餐厅名称、位置距离、好评率、月销量、标签）</li>
+</ol>
+<h4 id="3-3-4-餐厅内"><a href="#3-3-4-餐厅内" class="headerlink" title="3.3.4 餐厅内"></a>3.3.4 餐厅内</h4><h5 id="3-3-4-1-餐厅内首页"><a href="#3-3-4-1-餐厅内首页" class="headerlink" title="3.3.4.1 餐厅内首页"></a>3.3.4.1 餐厅内首页</h5><ol>
+<li>商家提供的图片、餐厅基本描述</li>
+<li>左侧提供商家的商品标签分类</li>
+<li>中间显示商品基本信息（图片、商品名称、好评率、月销量、标签、评价），3.3.4.3</li>
+<li>右侧显示加号按钮，加入购物车，跳转3.3.4.2</li>
+<li>最下方显示购物车、结算按钮，结算后跳转3.3.5订单</li>
+</ol>
+<h5 id="3-3-4-2-购物车管理"><a href="#3-3-4-2-购物车管理" class="headerlink" title="3.3.4.2 购物车管理"></a>3.3.4.2 购物车管理</h5><ol>
+<li>显示商品图片、名称、数量</li>
+<li>提供加减按钮，增加或者减少</li>
+</ol>
+<h5 id="3-3-4-3-商品信息"><a href="#3-3-4-3-商品信息" class="headerlink" title="3.3.4.3 商品信息"></a>3.3.4.3 商品信息</h5><ol>
+<li>显示商品名称、图片好评率、月销量、标签、评价</li>
+</ol>
+<h4 id="3-3-5-订单"><a href="#3-3-5-订单" class="headerlink" title="3.3.5 订单"></a>3.3.5 订单</h4><ol>
+<li>提供每次订单的时间、取餐码</li>
+<li>提供评价（1-5）功能，对平台、商户、商品进行评价</li>
+</ol>
+<h2 id="3、功能清单-1"><a href="#3、功能清单-1" class="headerlink" title="3、功能清单*"></a>3、功能清单*</h2><h3 id="3-1-平台端前端"><a href="#3-1-平台端前端" class="headerlink" title="3.1 平台端前端"></a>3.1 平台端前端</h3><h4 id="3-1-1-主页（工作台）-1"><a href="#3-1-1-主页（工作台）-1" class="headerlink" title="3.1.1 主页（工作台）"></a>3.1.1 主页（工作台）</h4><ol>
+<li>静态显示当前管理员头像、管理员账号</li>
+<li>显示四个带有链接的图标，链接到以下子页面：1公告管理、2商户管理、3数据统计、4活动管理</li>
+</ol>
+<h4 id="3-1-2-公告管理"><a href="#3-1-2-公告管理" class="headerlink" title="3.1.2 公告管理"></a>3.1.2 公告管理</h4><ol>
+<li>自动生成公告id，按照发布顺序排序</li>
+<li>提供公告类型选择：资讯 &#x2F; 广告</li>
+<li>提供公告标题输入框</li>
+<li>提供公告内容输入框，支持图片上传</li>
+<li>提供发布公告按钮</li>
+<li>显示历史公告列表，按发布时间倒序排列，显示标题和发布日期</li>
+</ol>
+<h4 id="3-1-3-商户管理"><a href="#3-1-3-商户管理" class="headerlink" title="3.1.3 商户管理"></a>3.1.3 商户管理</h4><ol>
+<li>显示待审核的商户列表，点击可查看详细信息，包括名称、标签、申请时间，以及审核操作按钮（通过&#x2F;不通过）</li>
+<li>提供商户信息导入功能，支持批量导入商户名称、标签、注册时间等信息</li>
+</ol>
+<h4 id="3-1-4-数据统计-1"><a href="#3-1-4-数据统计-1" class="headerlink" title="3.1.4 数据统计"></a>3.1.4 数据统计</h4><ol>
+<li>显示已入驻商户数量</li>
+<li>可以对不同标签的商户进行浏览、排序（柱状图）</li>
+<li>显示注册用户数量及注册趋势（柱状图、折线图）</li>
+<li>显示日活跃用户数量及活跃用户数量趋势（柱状图、折线图）</li>
+</ol>
+<h4 id="3-1-5-活动管理（优惠券）"><a href="#3-1-5-活动管理（优惠券）" class="headerlink" title="3.1.5 活动管理（优惠券）"></a>3.1.5 活动管理（优惠券）</h4><h5 id="3-1-5-1-活动统计-1"><a href="#3-1-5-1-活动统计-1" class="headerlink" title="3.1.5.1 活动统计"></a>3.1.5.1 活动统计</h5><ol>
+<li>提供新建活动按钮</li>
+<li>显示优惠券发行量及使用率统计图表</li>
+</ol>
+<h5 id="3-1-5-2-新建活动-1"><a href="#3-1-5-2-新建活动-1" class="headerlink" title="3.1.5.2 新建活动"></a>3.1.5.2 新建活动</h5><ol>
+<li>提供活动标题、活动内容输入框，以及活动类型选择</li>
+<li>提供发布活动按钮</li>
+<li>页面右侧显示滚动的商户、用户列表，支持标签筛选</li>
+</ol>
+<h3 id="3-2-用户端前端"><a href="#3-2-用户端前端" class="headerlink" title="3.2 用户端前端"></a>3.2 用户端前端</h3><h4 id="3-2-1-登陆"><a href="#3-2-1-登陆" class="headerlink" title="3.2.1 登陆"></a>3.2.1 登陆</h4><ol>
+<li>用户输入手机号后，进行格式和权限验证，验证通过后可获取验证码，验证失败则弹出提示窗口</li>
+<li>提供验证码输入框，以及重新获取验证码按钮</li>
+<li>提供注册和登陆按钮</li>
+</ol>
+<h4 id="3-2-2-首页"><a href="#3-2-2-首页" class="headerlink" title="3.2.2 首页"></a>3.2.2 首页</h4><ol>
+<li>显示活动栏、广告栏，点击可查看所有有效活动和广告，以及资讯栏</li>
+<li>提供导航按钮，链接到首页、餐厅、订单、个人中心等页面</li>
+</ol>
+<h4 id="3-2-3-餐厅选择"><a href="#3-2-3-餐厅选择" class="headerlink" title="3.2.3 餐厅选择"></a>3.2.3 餐厅选择</h4><ol>
+<li>提供模糊搜索功能</li>
+<li>提供餐厅标签筛选功能</li>
+<li>提供排序功能，支持按地理位置、好评率、价格排序</li>
+<li>显示餐厅基本信息，包括图片、名称、距离、好评率、月销量、标签</li>
+</ol>
+<h4 id="3-2-4-餐厅详情"><a href="#3-2-4-餐厅详情" class="headerlink" title="3.2.4 餐厅详情"></a>3.2.4 餐厅详情</h4><h5 id="3-2-4-1-餐厅首页"><a href="#3-2-4-1-餐厅首页" class="headerlink" title="3.2.4.1 餐厅首页"></a>3.2.4.1 餐厅首页</h5><ol>
+<li>显示餐厅图片和基本描述</li>
+<li>左侧显示商品分类</li>
+<li>中间显示商品列表，包括图片、名称、好评率、月销量、标签、用户评价</li>
+<li>右侧显示添加到购物车按钮，点击后跳转到购物车页面</li>
+<li>底部显示购物车图标和结算按钮，点击后跳转到订单页面</li>
+</ol>
+<h5 id="3-2-4-2-购物车管理"><a href="#3-2-4-2-购物车管理" class="headerlink" title="3.2.4.2 购物车管理"></a>3.2.4.2 购物车管理</h5><ol>
+<li>显示已添加商品的图片、名称、数量</li>
+<li>提供增减商品数量的按钮</li>
+</ol>
+<h5 id="3-2-4-3-商品详情"><a href="#3-2-4-3-商品详情" class="headerlink" title="3.2.4.3 商品详情"></a>3.2.4.3 商品详情</h5><ol>
+<li>显示商品名称、图片、好评率、月销量、标签、用户评价</li>
+</ol>
+<h4 id="3-2-5-订单管理"><a href="#3-2-5-订单管理" class="headerlink" title="3.2.5 订单管理"></a>3.2.5 订单管理</h4><ol>
+<li>显示订单列表，包括订单时间和取餐码</li>
+<li>提供评价功能，用户可对平台、商户、商品进行1-5星级评价</li>
+</ol>
+<h3 id="3-3-商户端前端"><a href="#3-3-商户端前端" class="headerlink" title="3.3 商户端前端"></a>3.3 商户端前端</h3><h4 id="3-3-1-商户注册与登录"><a href="#3-3-1-商户注册与登录" class="headerlink" title="3.3.1 商户注册与登录"></a>3.3.1 商户注册与登录</h4><ol>
+<li>提供商户注册功能，包括输入商户名称、密码、联系方式等信息，并提交审核</li>
+<li>提供商户登录功能，输入正确的商户名称和密码后可登录系统</li>
+</ol>
+<h4 id="3-3-2-商户信息管理"><a href="#3-3-2-商户信息管理" class="headerlink" title="3.3.2 商户信息管理"></a>3.3.2 商户信息管理</h4><ol>
+<li>允许商户查看和修改餐厅基本信息，如餐厅名称、地址、联系方式等</li>
+<li>提供上传餐厅Logo或照片的功能</li>
+<li>提供修改密码的功能</li>
+</ol>
+<h4 id="3-3-3-商品管理"><a href="#3-3-3-商品管理" class="headerlink" title="3.3.3 商品管理"></a>3.3.3 商品管理</h4><ol>
+<li>提供商品列表，显示商品名称、价格、描述、推荐评分、标签等信息</li>
+<li>提供添加新商品的功能，包括输入商品名称、价格、描述、推荐评分、标签等信息</li>
+<li>允许商户修改商品信息</li>
+<li>提供删除商品的功能</li>
+<li>允许商户设置商品的上线或下线状态</li>
+</ol>
+<h4 id="3-3-4-营销活动管理"><a href="#3-3-4-营销活动管理" class="headerlink" title="3.3.4 营销活动管理"></a>3.3.4 营销活动管理</h4><ol>
+<li>提供创建新活动的功能，包括输入活动名称、描述、类型（如折扣、满减等）、开始和结束时间等信息</li>
+<li>显示已创建的活动列表，包括活动名称、描述、类型、开始和结束时间等信息</li>
+<li>允许商户修改或删除活动</li>
+</ol>
+<h4 id="3-3-5-反馈与意见管理"><a href="#3-3-5-反馈与意见管理" class="headerlink" title="3.3.5 反馈与意见管理"></a>3.3.5 反馈与意见管理</h4><ol>
+<li>显示用户反馈和意见列表，包括反馈内容、反馈时间、用户信息等</li>
+<li>提供回复反馈的功能，商户可以直接在反馈列表中回复用户的反馈</li>
+</ol>
+<h4 id="3-3-6-数据统计与分析"><a href="#3-3-6-数据统计与分析" class="headerlink" title="3.3.6 数据统计与分析"></a>3.3.6 数据统计与分析</h4><h5 id="3-3-6-1-数据概览"><a href="#3-3-6-1-数据概览" class="headerlink" title="3.3.6.1 数据概览"></a>3.3.6.1 数据概览</h5><ol>
+<li>显示商户的总销售额、总订单数量、总访问量等关键数据，以卡片形式展示在页面顶部。</li>
+</ol>
+<h5 id="3-3-6-2-销售数据"><a href="#3-3-6-2-销售数据" class="headerlink" title="3.3.6.2 销售数据"></a>3.3.6.2 销售数据</h5><ol>
+<li>显示销售额和订单数量的趋势图，可以选择查看日、周、月的数据。</li>
+<li>下方列出每个商品的销售数量、销售额，可以按销售数量或销售额进行排序。</li>
+<li>可以对不同标签的商品进行浏览</li>
+</ol>
+<h5 id="3-3-6-3-访问数据"><a href="#3-3-6-3-访问数据" class="headerlink" title="3.3.6.3 访问数据"></a>3.3.6.3 访问数据</h5><ol>
+<li>显示访问量的趋势图，可以选择查看日、周、月的数据。</li>
+<li>下方列出每个商品的访问次数，可以按访问次数进行排序。</li>
+<li>可以对不同标签的商品进行浏览</li>
+</ol>
+<h5 id="3-3-6-4-用户数据"><a href="#3-3-6-4-用户数据" class="headerlink" title="3.3.6.4 用户数据"></a>3.3.6.4 用户数据</h5><ol>
+<li>显示用户数量的趋势图，可以选择查看日、周、月的数据。</li>
+<li>下方列出用户的地域分布图。</li>
+</ol>
+<h5 id="3-3-6-5-数据导出"><a href="#3-3-6-5-数据导出" class="headerlink" title="3.3.6.5 数据导出"></a>3.3.6.5 数据导出</h5><ol>
+<li>提供数据导出功能，商户可以选择导出销售数据、访问数据、用户数据等，导出格式为CSV。</li>
+</ol>
+<h4 id="3-3-7-订单管理"><a href="#3-3-7-订单管理" class="headerlink" title="3.3.7 订单管理"></a>3.3.7 订单管理</h4><ol>
+<li>显示接收到的订单列表，包括订单详情、订单状态、订单时间等信息</li>
+<li>允许商户更新订单状态，如确认接单、出餐、完成等</li>
+<li>提供订单导出和数据分析的功能</li>
+</ol>
+<h4 id="3-3-8-消息通知"><a href="#3-3-8-消息通知" class="headerlink" title="3.3.8 消息通知"></a>3.3.8 消息通知</h4><ol>
+<li>显示系统发送的重要通知，如订单通知、系统更新等</li>
+<li>提供查看历史通知的功能</li>
+</ol>
+<h2 id="4、页面设计"><a href="#4、页面设计" class="headerlink" title="4、页面设计"></a>4、页面设计</h2><h3 id="4-1-平台端前端"><a href="#4-1-平台端前端" class="headerlink" title="4.1 平台端前端"></a>4.1 平台端前端</h3><h4 id="4-1-1-主页（工作台）"><a href="#4-1-1-主页（工作台）" class="headerlink" title="4.1.1 主页（工作台）"></a>4.1.1 主页（工作台）</h4><p>页面顶部是一个导航栏，包括平台名称、logo、各个功能页面的链接（如公告管理、商户管理、数据统计与分析、活动管理等）。</p>
+<p>页面中间是一个欢迎语和管理员的头像、账号。</p>
+<p>页面下方是四个大图标，分别链接到公告管理、商户管理、数据统计与分析、活动管理页面。</p>
+<p>页面底部是版权信息和联系方式。</p>
+<h4 id="4-1-2-公告管理"><a href="#4-1-2-公告管理" class="headerlink" title="4.1.2 公告管理"></a>4.1.2 公告管理</h4><p>页面顶部是一个导航栏，同主页。</p>
+<p>页面左侧是公告列表，按发布时间倒序排列，显示标题和发布日期。</p>
+<p>页面右侧是当前选中的公告的详细信息，包括公告类型、标题、内容、图片。</p>
+<p>页面底部是版权信息和联系方式。</p>
+<h4 id="4-1-3-商户管理"><a href="#4-1-3-商户管理" class="headerlink" title="4.1.3 商户管理"></a>4.1.3 商户管理</h4><p>页面顶部是一个导航栏，同主页。</p>
+<p>页面左侧是待审核的商户列表，点击可以查看详细信息。</p>
+<p>页面右侧是当前选中的商户的详细信息，包括名称、标签、申请时间，以及审核操作按钮（通过&#x2F;不通过）。</p>
+<p>页面底部是版权信息和联系方式。</p>
+<h4 id="4-1-4-数据统计"><a href="#4-1-4-数据统计" class="headerlink" title="4.1.4 数据统计"></a>4.1.4 数据统计</h4><p>页面顶部是一个导航栏，同主页。</p>
+<p>页面中间是各项数据的统计图表，包括已入驻商户数量、注册用户数量及注册趋势、日活跃用户数量及活跃用户数量趋势。</p>
+<p>页面底部是版权信息和联系方式。</p>
+<h4 id="4-1-5-活动管理（优惠券）"><a href="#4-1-5-活动管理（优惠券）" class="headerlink" title="4.1.5 活动管理（优惠券）"></a>4.1.5 活动管理（优惠券）</h4><p>页面顶部是一个导航栏，同主页。</p>
+<p>页面左侧是活动列表，点击可以查看详细信息。</p>
+<p>页面右侧是当前选中的活动的详细信息，包括活动标题、活动内容、活动类型，以及发布按钮。</p>
+<p>页面底部是版权信息和联系方式。</p>
+<h3 id="4-2-用户端前端"><a href="#4-2-用户端前端" class="headerlink" title="4.2 用户端前端"></a>4.2 用户端前端</h3><h4 id="4-2-1-登陆"><a href="#4-2-1-登陆" class="headerlink" title="4.2.1 登陆"></a>4.2.1 登陆</h4><p>页面顶部是一个导航栏，包括平台名称、logo。</p>
+<p>页面中间是登录表单，包括手机号输入框、验证码输入框、获取验证码按钮、登录按钮。</p>
+<p>页面底部是版权信息和联系方式。</p>
+<h4 id="4-2-2-首页"><a href="#4-2-2-首页" class="headerlink" title="4.2.2 首页"></a>4.2.2 首页</h4><p>页面顶部是一个导航栏，包括平台名称、logo、各个功能页面的链接（如餐厅选择、订单管理等）。</p>
+<p>页面中间是活动栏、广告栏，点击可以查看详细信息。</p>
+<p>页面底部是版权信息和联系方式。</p>
+<h4 id="4-2-3-餐厅选择"><a href="#4-2-3-餐厅选择" class="headerlink" title="4.2.3 餐厅选择"></a>4.2.3 餐厅选择</h4><p>页面顶部是一个导航栏，同首页。</p>
+<p>页面中间上方是搜索栏，用户可以输入关键词进行搜索。</p>
+<p>页面中间下方是餐厅列表，显示餐厅的图片、名称、距离、好评率、月销量、标签。</p>
+<p>页面底部是版权信息和联系方式。</p>
+<h4 id="4-2-4-餐厅内"><a href="#4-2-4-餐厅内" class="headerlink" title="4.2.4 餐厅内"></a>4.2.4 餐厅内</h4><p>页面顶部是一个导航栏，同首页。</p>
+<p>页面中间上方是餐厅的图片和基本描述。</p>
+<p>页面中间下方是商品列表，显示商品的图片、名称、好评率、月销量、标签、评价。</p>
+<p>页面底部是购物车和结算按钮。</p>
+<h4 id="4-2-5-订单"><a href="#4-2-5-订单" class="headerlink" title="4.2.5 订单"></a>4.2.5 订单</h4><p>页面顶部是一个导航栏，同首页。</p>
+<p>页面中间是订单列表，显示每次订单的时间、取餐码、订单状态。</p>
+<p>页面底部是版权信息和联系方式。</p>
+<h3 id="4-3-商户端前端"><a href="#4-3-商户端前端" class="headerlink" title="4.3 商户端前端"></a>4.3 商户端前端</h3><h4 id="4-3-1-登陆"><a href="#4-3-1-登陆" class="headerlink" title="4.3.1 登陆"></a>4.3.1 登陆</h4><p>页面顶部是一个导航栏，包括平台名称、logo。</p>
+<p>页面中间是登录表单，包括商户账号输入框、密码输入框、登录按钮。</p>
+<p>页面底部是版权信息和联系方式。</p>
+<h4 id="4-3-2-商户信息管理"><a href="#4-3-2-商户信息管理" class="headerlink" title="4.3.2 商户信息管理"></a>4.3.2 商户信息管理</h4><p>页面顶部是一个导航栏，包括平台名称、logo、各个功能页面的链接（如商品管理、订单管理、数据统计与分析等）。</p>
+<p>页面中间是商户的基本信息，包括商户名称、地址、联系方式、Logo等，可以进行修改。</p>
+<p>页面底部是版权信息和联系方式。</p>
+<h4 id="4-3-3-商品管理"><a href="#4-3-3-商品管理" class="headerlink" title="4.3.3 商品管理"></a>4.3.3 商品管理</h4><p>页面顶部是一个导航栏，同商户信息管理。</p>
+<p>页面左侧是商品列表，点击可以查看详细信息。</p>
+<p>页面右侧是当前选中的商品的详细信息，包括商品名称、价格、描述、推荐评分、标签，可以进行修改。</p>
+<p>页面底部是版权信息和联系方式。</p>
+<h4 id="4-3-4-营销活动管理"><a href="#4-3-4-营销活动管理" class="headerlink" title="4.3.4 营销活动管理"></a>4.3.4 营销活动管理</h4><p>页面顶部是一个导航栏，同商户信息管理。</p>
+<p>页面左侧是活动列表，点击可以查看详细信息。</p>
+<p>页面右侧是当前选中的活动的详细信息，包括活动标题、活动内容、活动类型，可以进行修改。</p>
+<p>页面底部是版权信息和联系方式。</p>
+<h4 id="4-3-5-反馈与意见收集"><a href="#4-3-5-反馈与意见收集" class="headerlink" title="4.3.5 反馈与意见收集"></a>4.3.5 反馈与意见收集</h4><p>页面顶部是一个导航栏，同商户信息管理。</p>
+<p>页面中间是用户反馈和意见的列表，显示用户的反馈内容、时间，商户可以进行回复。</p>
+<p>页面底部是版权信息和联系方式。</p>
+<h4 id="4-3-6-数据统计与分析"><a href="#4-3-6-数据统计与分析" class="headerlink" title="4.3.6 数据统计与分析"></a>4.3.6 数据统计与分析</h4><p>页面顶部是一个导航栏，同商户信息管理。</p>
+<p>页面中间是各项数据的统计图表，包括商品点击量、订单发生时间等。</p>
+<p>页面底部是版权信息和联系方式。</p>
+<h4 id="4-3-7-订单管理"><a href="#4-3-7-订单管理" class="headerlink" title="4.3.7 订单管理"></a>4.3.7 订单管理</h4><p>页面顶部是一个导航栏，同商户信息管理。</p>
+<p>页面左侧是订单列表，点击可以查看详细信息。</p>
+<p>页面右侧是当前选中的订单的详细信息，包括订单详情、订单状态，可以进行更新。</p>
+<p>页面底部是版权信息和联系方式。</p>
+<h4 id="4-3-8-消息通知"><a href="#4-3-8-消息通知" class="headerlink" title="4.3.8 消息通知"></a>4.3.8 消息通知</h4><p>页面顶部是一个导航栏，同商户信息管理。</p>
+<p>页面中间是消息列表，显示平台发送的订单通知、系统更新等重要信息。</p>
+<p>页面底部是版权信息和联系方式。</p>
+<p>前后端不能分离</p>
+<p>功能清单+角色用例+流程图</p>
+<p>字段、<strong>功能按钮</strong>（逻辑）、查询条件、跳转逻辑</p>
+<p>UI原型图</p>
+<p>用户：主页、店铺详情</p>
+<p>商户：商品管理、菜品维护</p>
+<p>平台：审核页面、商家管理</p>
+<p>标签 &amp;&amp; 政策</p>
+<p>最小单元</p>
+<p>功能点</p>
+<p>wbs工作分解</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">1、需求分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%B9%B3%E5%8F%B0%E7%AB%AF-x2F-%E5%90%8E%E7%AB%AF"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 平台端&#x2F;后端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%E5%95%86%E6%88%B7%E7%AB%AF-x2F-%E5%90%8E%E7%AB%AF"><span class="toc-number">1.2.</span> <span class="toc-text">1.1.2 商户端&#x2F;后端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-%E7%94%A8%E6%88%B7%E7%AB%AF-x2F-%E5%89%8D%E7%AB%AF"><span class="toc-number">1.3.</span> <span class="toc-text">1.1.3 用户端&#x2F;前端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">2、逻辑设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 属性描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%85%B3%E7%B3%BB%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 关系描述</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E5%8A%9F%E8%83%BD%E6%B8%85%E5%8D%95"><span class="toc-number">3.</span> <span class="toc-text">3、功能清单</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%B9%B3%E5%8F%B0%E7%AB%AFpc"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 平台端pc</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-%E4%B8%BB%E9%A1%B5%EF%BC%88%E5%B7%A5%E4%BD%9C%E5%8F%B0%EF%BC%89"><span class="toc-number">3.1.1.</span> <span class="toc-text">3.1.1 主页（工作台）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-%E5%85%AC%E5%91%8A"><span class="toc-number">3.1.2.</span> <span class="toc-text">3.1.2 公告</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-%E5%95%86%E6%88%B7%E7%AE%A1%E7%90%86%EF%BC%88%E5%AE%A1%E6%A0%B8-%E5%BE%85%E5%AE%A1%E6%A0%B8%E5%88%97%E8%A1%A8%EF%BC%8C%E5%AE%A1%E6%A0%B8%E3%80%82%E5%95%86%E5%AE%B6%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E5%88%97%E8%A1%A8%EF%BC%88%E6%96%B0%E5%A2%9E%E3%80%81%E5%88%A0%E9%99%A4%E3%80%81%E7%BC%96%E8%BE%91%E3%80%81%E6%9F%A5%E8%AF%A2%EF%BC%89%EF%BC%89"><span class="toc-number">3.1.3.</span> <span class="toc-text">3.1.3 商户管理（审核-待审核列表，审核。商家基本信息列表（新增、删除、编辑、查询））</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-4-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1"><span class="toc-number">3.1.4.</span> <span class="toc-text">3.1.4 数据统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-5-%E6%B4%BB%E5%8A%A8%EF%BC%88%E4%BC%98%E6%83%A0%E5%88%B8%EF%BC%89"><span class="toc-number">3.1.5.</span> <span class="toc-text">3.1.5 活动（优惠券）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-5-1-%E6%B4%BB%E5%8A%A8%E7%BB%9F%E8%AE%A1"><span class="toc-number">3.1.5.1.</span> <span class="toc-text">3.1.5.1 活动统计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-5-2-%E6%96%B0%E5%BB%BA%E6%B4%BB%E5%8A%A8"><span class="toc-number">3.1.5.2.</span> <span class="toc-text">3.1.5.2 新建活动</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E7%94%A8%E6%88%B7%E7%AB%AF%E5%89%8D%E7%AB%AF"><span class="toc-number">3.2.</span> <span class="toc-text">3.3 用户端前端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-%E7%99%BB%E9%99%86"><span class="toc-number">3.2.1.</span> <span class="toc-text">3.3.1 登陆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-%E9%A6%96%E9%A1%B5"><span class="toc-number">3.2.2.</span> <span class="toc-text">3.3.2 首页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-3-%E9%A4%90%E5%8E%85%E9%80%89%E6%8B%A9"><span class="toc-number">3.2.3.</span> <span class="toc-text">3.3.3 餐厅选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-4-%E9%A4%90%E5%8E%85%E5%86%85"><span class="toc-number">3.2.4.</span> <span class="toc-text">3.3.4 餐厅内</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-4-1-%E9%A4%90%E5%8E%85%E5%86%85%E9%A6%96%E9%A1%B5"><span class="toc-number">3.2.4.1.</span> <span class="toc-text">3.3.4.1 餐厅内首页</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-4-2-%E8%B4%AD%E7%89%A9%E8%BD%A6%E7%AE%A1%E7%90%86"><span class="toc-number">3.2.4.2.</span> <span class="toc-text">3.3.4.2 购物车管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-4-3-%E5%95%86%E5%93%81%E4%BF%A1%E6%81%AF"><span class="toc-number">3.2.4.3.</span> <span class="toc-text">3.3.4.3 商品信息</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-5-%E8%AE%A2%E5%8D%95"><span class="toc-number">3.2.5.</span> <span class="toc-text">3.3.5 订单</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E5%8A%9F%E8%83%BD%E6%B8%85%E5%8D%95-1"><span class="toc-number">4.</span> <span class="toc-text">3、功能清单*</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%B9%B3%E5%8F%B0%E7%AB%AF%E5%89%8D%E7%AB%AF"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 平台端前端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-%E4%B8%BB%E9%A1%B5%EF%BC%88%E5%B7%A5%E4%BD%9C%E5%8F%B0%EF%BC%89-1"><span class="toc-number">4.1.1.</span> <span class="toc-text">3.1.1 主页（工作台）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-%E5%85%AC%E5%91%8A%E7%AE%A1%E7%90%86"><span class="toc-number">4.1.2.</span> <span class="toc-text">3.1.2 公告管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-%E5%95%86%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number">4.1.3.</span> <span class="toc-text">3.1.3 商户管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-4-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1-1"><span class="toc-number">4.1.4.</span> <span class="toc-text">3.1.4 数据统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-5-%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%EF%BC%88%E4%BC%98%E6%83%A0%E5%88%B8%EF%BC%89"><span class="toc-number">4.1.5.</span> <span class="toc-text">3.1.5 活动管理（优惠券）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-5-1-%E6%B4%BB%E5%8A%A8%E7%BB%9F%E8%AE%A1-1"><span class="toc-number">4.1.5.1.</span> <span class="toc-text">3.1.5.1 活动统计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-5-2-%E6%96%B0%E5%BB%BA%E6%B4%BB%E5%8A%A8-1"><span class="toc-number">4.1.5.2.</span> <span class="toc-text">3.1.5.2 新建活动</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%94%A8%E6%88%B7%E7%AB%AF%E5%89%8D%E7%AB%AF"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 用户端前端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-%E7%99%BB%E9%99%86"><span class="toc-number">4.2.1.</span> <span class="toc-text">3.2.1 登陆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-%E9%A6%96%E9%A1%B5"><span class="toc-number">4.2.2.</span> <span class="toc-text">3.2.2 首页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-%E9%A4%90%E5%8E%85%E9%80%89%E6%8B%A9"><span class="toc-number">4.2.3.</span> <span class="toc-text">3.2.3 餐厅选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-4-%E9%A4%90%E5%8E%85%E8%AF%A6%E6%83%85"><span class="toc-number">4.2.4.</span> <span class="toc-text">3.2.4 餐厅详情</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-4-1-%E9%A4%90%E5%8E%85%E9%A6%96%E9%A1%B5"><span class="toc-number">4.2.4.1.</span> <span class="toc-text">3.2.4.1 餐厅首页</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-4-2-%E8%B4%AD%E7%89%A9%E8%BD%A6%E7%AE%A1%E7%90%86"><span class="toc-number">4.2.4.2.</span> <span class="toc-text">3.2.4.2 购物车管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-4-3-%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85"><span class="toc-number">4.2.4.3.</span> <span class="toc-text">3.2.4.3 商品详情</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-5-%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86"><span class="toc-number">4.2.5.</span> <span class="toc-text">3.2.5 订单管理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%95%86%E6%88%B7%E7%AB%AF%E5%89%8D%E7%AB%AF"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 商户端前端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-%E5%95%86%E6%88%B7%E6%B3%A8%E5%86%8C%E4%B8%8E%E7%99%BB%E5%BD%95"><span class="toc-number">4.3.1.</span> <span class="toc-text">3.3.1 商户注册与登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-%E5%95%86%E6%88%B7%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86"><span class="toc-number">4.3.2.</span> <span class="toc-text">3.3.2 商户信息管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-3-%E5%95%86%E5%93%81%E7%AE%A1%E7%90%86"><span class="toc-number">4.3.3.</span> <span class="toc-text">3.3.3 商品管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-4-%E8%90%A5%E9%94%80%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86"><span class="toc-number">4.3.4.</span> <span class="toc-text">3.3.4 营销活动管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-5-%E5%8F%8D%E9%A6%88%E4%B8%8E%E6%84%8F%E8%A7%81%E7%AE%A1%E7%90%86"><span class="toc-number">4.3.5.</span> <span class="toc-text">3.3.5 反馈与意见管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-6-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90"><span class="toc-number">4.3.6.</span> <span class="toc-text">3.3.6 数据统计与分析</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-6-1-%E6%95%B0%E6%8D%AE%E6%A6%82%E8%A7%88"><span class="toc-number">4.3.6.1.</span> <span class="toc-text">3.3.6.1 数据概览</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-6-2-%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE"><span class="toc-number">4.3.6.2.</span> <span class="toc-text">3.3.6.2 销售数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-6-3-%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE"><span class="toc-number">4.3.6.3.</span> <span class="toc-text">3.3.6.3 访问数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-6-4-%E7%94%A8%E6%88%B7%E6%95%B0%E6%8D%AE"><span class="toc-number">4.3.6.4.</span> <span class="toc-text">3.3.6.4 用户数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-6-5-%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA"><span class="toc-number">4.3.6.5.</span> <span class="toc-text">3.3.6.5 数据导出</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-7-%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86"><span class="toc-number">4.3.7.</span> <span class="toc-text">3.3.7 订单管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-8-%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5"><span class="toc-number">4.3.8.</span> <span class="toc-text">3.3.8 消息通知</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E9%A1%B5%E9%9D%A2%E8%AE%BE%E8%AE%A1"><span class="toc-number">5.</span> <span class="toc-text">4、页面设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%B9%B3%E5%8F%B0%E7%AB%AF%E5%89%8D%E7%AB%AF"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 平台端前端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1-%E4%B8%BB%E9%A1%B5%EF%BC%88%E5%B7%A5%E4%BD%9C%E5%8F%B0%EF%BC%89"><span class="toc-number">5.1.1.</span> <span class="toc-text">4.1.1 主页（工作台）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-%E5%85%AC%E5%91%8A%E7%AE%A1%E7%90%86"><span class="toc-number">5.1.2.</span> <span class="toc-text">4.1.2 公告管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-3-%E5%95%86%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number">5.1.3.</span> <span class="toc-text">4.1.3 商户管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-4-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1"><span class="toc-number">5.1.4.</span> <span class="toc-text">4.1.4 数据统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-5-%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%EF%BC%88%E4%BC%98%E6%83%A0%E5%88%B8%EF%BC%89"><span class="toc-number">5.1.5.</span> <span class="toc-text">4.1.5 活动管理（优惠券）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E7%94%A8%E6%88%B7%E7%AB%AF%E5%89%8D%E7%AB%AF"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 用户端前端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-1-%E7%99%BB%E9%99%86"><span class="toc-number">5.2.1.</span> <span class="toc-text">4.2.1 登陆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-2-%E9%A6%96%E9%A1%B5"><span class="toc-number">5.2.2.</span> <span class="toc-text">4.2.2 首页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-3-%E9%A4%90%E5%8E%85%E9%80%89%E6%8B%A9"><span class="toc-number">5.2.3.</span> <span class="toc-text">4.2.3 餐厅选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-4-%E9%A4%90%E5%8E%85%E5%86%85"><span class="toc-number">5.2.4.</span> <span class="toc-text">4.2.4 餐厅内</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-5-%E8%AE%A2%E5%8D%95"><span class="toc-number">5.2.5.</span> <span class="toc-text">4.2.5 订单</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E5%95%86%E6%88%B7%E7%AB%AF%E5%89%8D%E7%AB%AF"><span class="toc-number">5.3.</span> <span class="toc-text">4.3 商户端前端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-1-%E7%99%BB%E9%99%86"><span class="toc-number">5.3.1.</span> <span class="toc-text">4.3.1 登陆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-2-%E5%95%86%E6%88%B7%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86"><span class="toc-number">5.3.2.</span> <span class="toc-text">4.3.2 商户信息管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-3-%E5%95%86%E5%93%81%E7%AE%A1%E7%90%86"><span class="toc-number">5.3.3.</span> <span class="toc-text">4.3.3 商品管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-4-%E8%90%A5%E9%94%80%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86"><span class="toc-number">5.3.4.</span> <span class="toc-text">4.3.4 营销活动管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-5-%E5%8F%8D%E9%A6%88%E4%B8%8E%E6%84%8F%E8%A7%81%E6%94%B6%E9%9B%86"><span class="toc-number">5.3.5.</span> <span class="toc-text">4.3.5 反馈与意见收集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-6-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90"><span class="toc-number">5.3.6.</span> <span class="toc-text">4.3.6 数据统计与分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-7-%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86"><span class="toc-number">5.3.7.</span> <span class="toc-text">4.3.7 订单管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-8-%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5"><span class="toc-number">5.3.8.</span> <span class="toc-text">4.3.8 消息通知</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/07/27/Internship-day03/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/07/27/Internship-day03/&text=Internship-day03"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/07/27/Internship-day03/&title=Internship-day03"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/07/27/Internship-day03/&is_video=false&description=Internship-day03"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Internship-day03&body=Check out this article: http://example.com/2023/07/27/Internship-day03/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/07/27/Internship-day03/&title=Internship-day03"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/07/27/Internship-day03/&title=Internship-day03"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/07/27/Internship-day03/&title=Internship-day03"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/07/27/Internship-day03/&title=Internship-day03"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/07/27/Internship-day03/&name=Internship-day03&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/07/27/Internship-day03/&t=Internship-day03"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2023
+    ch4r1ty
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
