@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="In the first beginning, I write a function with DeepFace 123456789101112131415161718192021222324252627282930313233343536373839404142from deepface import DeepFaceimport pandas as pdimport datetime# 这个文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Internship-day04">
+<meta property="og:url" content="http://example.com/2023/07/27/Internship-day04/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="In the first beginning, I write a function with DeepFace 123456789101112131415161718192021222324252627282930313233343536373839404142from deepface import DeepFaceimport pandas as pdimport datetime# 这个文">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-07-27T09:07:53.000Z">
+<meta property="article:modified_time" content="2023-07-27T09:40:34.394Z">
+<meta property="article:author" content="ch4r1ty">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Internship-day04</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/07/27/Internship-day03/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/07/27/Internship-day04/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/07/27/Internship-day04/&text=Internship-day04"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/07/27/Internship-day04/&title=Internship-day04"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/07/27/Internship-day04/&is_video=false&description=Internship-day04"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Internship-day04&body=Check out this article: http://example.com/2023/07/27/Internship-day04/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/07/27/Internship-day04/&title=Internship-day04"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/07/27/Internship-day04/&title=Internship-day04"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/07/27/Internship-day04/&title=Internship-day04"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/07/27/Internship-day04/&title=Internship-day04"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/07/27/Internship-day04/&name=Internship-day04&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/07/27/Internship-day04/&t=Internship-day04"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Internship-day04
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">ch4r1ty</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-07-27T09:07:53.000Z" itemprop="datePublished">2023-07-27</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>In the first beginning, I write a function with DeepFace</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> deepface <span class="keyword">import</span> DeepFace</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="comment"># 这个文件用之前要改成main.py</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Representations stored in db/representations_vgg_face.pkl file.Please delete this file when you add new identities in your database.</span></span><br><span class="line"><span class="comment"># 每次动db文件夹，也就是数据库，都要把里面的pkl文件删掉</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取 Excel 文件</span></span><br><span class="line">df = pd.read_excel(<span class="string">&#x27;info.xlsx&#x27;</span>)</span><br><span class="line"></span><br><span class="line">a=datetime.datetime.now()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 比对图片和数据库</span></span><br><span class="line"><span class="comment"># 这个是模版</span></span><br><span class="line"><span class="comment"># found = DeepFace.find(img_path = &quot;img.png&quot;, db_path = &quot;db&quot;)</span></span><br><span class="line">found = DeepFace.find(img_path=<span class="string">&quot;img.png&quot;</span>, db_path=<span class="string">&quot;db&quot;</span>, model_name=<span class="string">&#x27;DeepFace&#x27;</span>)</span><br><span class="line"></span><br><span class="line">b=datetime.datetime.now()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果找到了匹配的图片</span></span><br><span class="line"><span class="keyword">if</span> found:</span><br><span class="line">    <span class="comment"># 取第一张匹配的图片</span></span><br><span class="line">    <span class="keyword">match</span> = found[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 提取出不含后缀的文件名，假设找到的图片的文件名（不包括扩展名）是人的 ID</span></span><br><span class="line">    person_id = <span class="built_in">str</span>(<span class="keyword">match</span>[<span class="string">&#x27;identity&#x27;</span>]).split(<span class="string">&#x27;/&#x27;</span>)[-<span class="number">1</span>].split(<span class="string">&#x27;.&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 在 Excel 文件中查找这个人的信息</span></span><br><span class="line">    person_info = df[df[<span class="string">&#x27;id&#x27;</span>].astype(<span class="built_in">str</span>) == person_id]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 如果找到了这个人的信息</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> person_info.empty:</span><br><span class="line">        <span class="comment"># 打印这个人的信息</span></span><br><span class="line">        <span class="built_in">print</span>(person_info.iloc[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># print(&quot;used time:&quot;, b-a)</span></span><br><span class="line"><span class="comment"># # 这里用来测试打印</span></span><br><span class="line"><span class="comment"># print(df)</span></span><br><span class="line"><span class="comment"># print(&#x27;found:&#x27;, found)</span></span><br><span class="line"><span class="comment"># print(&#x27;person_id:&#x27;, person_id)</span></span><br><span class="line"><span class="comment"># print(&#x27;person_info:&#x27;, person_info)</span></span><br></pre></td></tr></table></figure>
+
+<p>But the effectiveness of the model and algorithms are poor. When “model_name&#x3D;’DeepFace’”, the recognition speed is fast, with the sacrifice of accuracy. When “model_name&#x3D;’VGG’”, the recognition speed is slow, about 15s per request.</p>
+<p>Consequently, I used ‘face_recognition’ from GitHub, which turned out to be of great effectiveness.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> face_recognition</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">find_person_info</span>(<span class="params">image_path</span>):</span><br><span class="line">    <span class="comment"># 文件夹路径</span></span><br><span class="line">    folder_path = <span class="string">&quot;db&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 加载你想要识别的图片</span></span><br><span class="line">    unknown_image = face_recognition.load_image_file(image_path)</span><br><span class="line">    unknown_face_encodings = face_recognition.face_encodings(unknown_image)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> unknown_face_encodings:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;No faces found in the unknown_image.&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 获取未知图片中的面部编码</span></span><br><span class="line">    unknown_face_encoding = unknown_face_encodings[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 遍历文件夹中的每一张图片</span></span><br><span class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(folder_path):</span><br><span class="line">        <span class="comment"># 只处理图片文件</span></span><br><span class="line">        <span class="keyword">if</span> filename.endswith(<span class="string">&quot;.jpg&quot;</span>) <span class="keyword">or</span> filename.endswith(<span class="string">&quot;.png&quot;</span>):</span><br><span class="line">            <span class="comment"># 加载已知的图片</span></span><br><span class="line">            known_image = face_recognition.load_image_file(os.path.join(folder_path, filename))</span><br><span class="line">            known_face_encodings = face_recognition.face_encodings(known_image)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> known_face_encodings:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">f&quot;No faces found in the image <span class="subst">&#123;filename&#125;</span>.&quot;</span>)</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 获取已知图片中的面部编码</span></span><br><span class="line">            known_face_encoding = known_face_encodings[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 比较两个面部编码，看是否匹配，调整tolerance参数</span></span><br><span class="line">            results = face_recognition.compare_faces([known_face_encoding], unknown_face_encoding, tolerance=<span class="number">0.45</span>)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 打印结果</span></span><br><span class="line">            <span class="keyword">if</span> results[<span class="number">0</span>]:</span><br><span class="line">                <span class="comment"># 提取出不含后缀的文件名，假设文件名（不包括扩展名）是人的名字</span></span><br><span class="line">                person_id = filename.split(<span class="string">&#x27;.&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">f&quot;The unknown_image has a face that matches <span class="subst">&#123;person_id&#125;</span>!&quot;</span>)</span><br><span class="line"></span><br><span class="line">                df = pd.read_excel(<span class="string">&#x27;info.xlsx&#x27;</span>)</span><br><span class="line"></span><br><span class="line">                person_info = df[df[<span class="string">&#x27;id&#x27;</span>].astype(<span class="built_in">str</span>) == person_id]</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 如果找到了这个人的信息</span></span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> person_info.empty:</span><br><span class="line">                    <span class="comment"># 返回这个人的信息</span></span><br><span class="line"></span><br><span class="line">                    <span class="built_in">print</span>(person_info.iloc[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">                    <span class="comment"># 返回to_dict()格式</span></span><br><span class="line">                    <span class="keyword">return</span> person_info.iloc[<span class="number">0</span>].to_dict()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p>the key steps include:</p>
+<ol>
+<li><p>load the unknown picture and get the encoding</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文件夹路径</span></span><br><span class="line">folder_path = <span class="string">&quot;db&quot;</span></span><br><span class="line">   </span><br><span class="line"><span class="comment"># 加载你想要识别的图片</span></span><br><span class="line">unknown_image = face_recognition.load_image_file(image_path)</span><br><span class="line">unknown_face_encodings = face_recognition.face_encodings(unknown_image)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>traverse pictures in ‘db’ files and get all encodings</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 遍历文件夹中的每一张图片</span></span><br><span class="line">   <span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(folder_path):</span><br><span class="line">       <span class="comment"># 只处理图片文件</span></span><br><span class="line">       <span class="keyword">if</span> filename.endswith(<span class="string">&quot;.jpg&quot;</span>) <span class="keyword">or</span> filename.endswith(<span class="string">&quot;.png&quot;</span>):</span><br><span class="line">           <span class="comment"># 加载已知的图片</span></span><br><span class="line">           known_image = face_recognition.load_image_file(os.path.join(folder_path, filename))</span><br><span class="line">           known_face_encodings = face_recognition.face_encodings(known_image)</span><br><span class="line">   </span><br><span class="line">           <span class="keyword">if</span> <span class="keyword">not</span> known_face_encodings:</span><br><span class="line">               <span class="built_in">print</span>(<span class="string">f&quot;No faces found in the image <span class="subst">&#123;filename&#125;</span>.&quot;</span>)</span><br><span class="line">               <span class="keyword">continue</span></span><br><span class="line">   </span><br><span class="line">           <span class="comment"># 获取已知图片中的面部编码</span></span><br><span class="line">           known_face_encoding = known_face_encodings[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>compare unknown_encodings with known_encodings, adjusting parameters: tolerance. Then transfer the output type of name of the picture from int to string</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 比较两个面部编码，看是否匹配，调整tolerance参数</span></span><br><span class="line">            results = face_recognition.compare_faces([known_face_encoding], unknown_face_encoding, tolerance=<span class="number">0.45</span>)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 打印结果</span></span><br><span class="line">            <span class="keyword">if</span> results[<span class="number">0</span>]:</span><br><span class="line">                <span class="comment"># 提取出不含后缀的文件名，假设文件名（不包括扩展名）是人的名字</span></span><br><span class="line">                person_id = filename.split(<span class="string">&#x27;.&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">f&quot;The unknown_image has a face that matches <span class="subst">&#123;person_id&#125;</span>!&quot;</span>)</span><br><span class="line"></span><br><span class="line">                df = pd.read_excel(<span class="string">&#x27;info.xlsx&#x27;</span>)</span><br><span class="line"></span><br><span class="line">                person_info = df[df[<span class="string">&#x27;id&#x27;</span>].astype(<span class="built_in">str</span>) == person_id]</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 如果找到了这个人的信息</span></span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> person_info.empty:</span><br><span class="line">                    <span class="comment"># 返回这个人的信息</span></span><br><span class="line"></span><br><span class="line">                    <span class="built_in">print</span>(person_info.iloc[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">                    <span class="comment"># 返回to_dict()格式</span></span><br><span class="line">                    <span class="keyword">return</span> person_info.iloc[<span class="number">0</span>].to_dict()</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>Make sure that, the id value in excel file, equals to names of the known pictures(without postfix)</p>
+<p>明天做异常处理、报错，多人图片，性能优化</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/07/27/Internship-day04/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/07/27/Internship-day04/&text=Internship-day04"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/07/27/Internship-day04/&title=Internship-day04"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/07/27/Internship-day04/&is_video=false&description=Internship-day04"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Internship-day04&body=Check out this article: http://example.com/2023/07/27/Internship-day04/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/07/27/Internship-day04/&title=Internship-day04"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/07/27/Internship-day04/&title=Internship-day04"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/07/27/Internship-day04/&title=Internship-day04"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/07/27/Internship-day04/&title=Internship-day04"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/07/27/Internship-day04/&name=Internship-day04&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/07/27/Internship-day04/&t=Internship-day04"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2023
+    ch4r1ty
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
