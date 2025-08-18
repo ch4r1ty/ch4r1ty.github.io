@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang=en>
+  <head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="二叉树题目总结 - ch4r1ty's Blog">
+    <meta property="og:url" content="https://ch4r1ty.github.io/2025/08/17/binary-tree-summary/">
+    <meta property="og:site_name" content="ch4r1ty's Blog">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:author" content="ch4r1ty">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="二叉树题目总结">
+    <meta name="twitter:description" content="LeetCode二叉树题目解法总结，包含BFS层序遍历模板和常见题目解法">
+    
+    <title>二叉树题目总结 - ch4r1ty's Blog</title>
+    
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+    
+    <link rel="canonical" href="https://ch4r1ty.github.io/2025/08/17/binary-tree-summary/">
+    
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <script src="/js/main.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header id="header">
+        <div class="header-inner">
+          <div class="site-meta">
+            <div class="custom-logo-site-title">
+              <a href="/" class="brand" rel="start">
+                <span class="logo-line-before"><i></i></span>
+                <span class="site-title">ch4r1ty's Blog</span>
+                <span class="logo-line-after"><i></i></span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="site-nav-toggle">
+            <div class="toggle" aria-label="Menu">
+              <span class="toggle-line toggle-line-first"></span>
+              <span class="toggle-line toggle-line-middle"></span>
+              <span class="toggle-line toggle-line-last"></span>
+            </div>
+          </div>
+          
+          <div class="site-nav">
+            <ul>
+              <li class="icon">
+                <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x"></i></a>
+              </li>
+              <!--
+             --><li><a href="/">Home</a></li><!--
+           --><!--
+             --><li><a href="/about/">About</a></li><!--
+           --><!--
+             --><li><a href="/archives/">Writing</a></li><!--
+           --><!--
+                 --><li><a target="_blank" rel="noopener" href="https://github.com/ch4r1ty">Projects</a></li><!--
+           -->
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <div class="post-meta">
+            <time datetime="2025-08-17T08:00:00.000Z" itemprop="datePublished">2025-08-17</time>
+          </div>
+          
+          <h1 class="post-title" itemprop="name headline">二叉树题目总结</h1>
+          
+          <div class="post-content" itemprop="articleBody">
+            <h2>BFS层序遍历模板</h2>
+            <pre><code class="language-python">def bfs(root):
+    if not root:
+        return []
+    
+    queue = collections.deque([root])
+    result = []
+    
+    while queue:
+        level = []
+        for i in range(len(queue)):  # 关键：固定当前层节点数
+            cur = queue.popleft()
+            level.append(cur.val)
+            if cur.left: queue.append(cur.left)
+            if cur.right: queue.append(cur.right)
+        result.append(level)
+    
+    return result</code></pre>
+            <p><strong>口诀：「队、层、弹、存」</strong></p>
+            
+            <hr>
+            
+            <h2>题目解法</h2>
+            
+            <h3>199. 二叉树右视图</h3>
+            <pre><code class="language-python"># 基于BFS模板，只保存每层最后一个
+if i == len(queue) - 1:
+    res.append(cur.val)</code></pre>
+            
+            <h3>1161. 层和最大值</h3>
+            <pre><code class="language-python"># 基于BFS模板，累加每层的和
+level_sum = 0  # 每层重置
+for i in range(len(queue)):
+    level_sum += cur.val</code></pre>
+            
+            <h3>297. 序列化/反序列化</h3>
+            <pre><code class="language-python"># 序列化：前序遍历
+def serialize(root):
+    if not root: return "None"
+    return str(root.val) + "," + serialize(root.left) + "," + serialize(root.right)
+
+# 反序列化：按相同顺序重建</code></pre>
+            
+            <h3>700. BST搜索</h3>
+            <pre><code class="language-python">def searchBST(root, val):
+    if not root: return None
+    if root.val == val: return root
+    elif root.val > val: return searchBST(root.left, val)  # 必须return
+    else: return searchBST(root.right, val)</code></pre>
+            
+            <h3>450. BST删除</h3>
+            <pre><code class="language-python">def deleteNode(root, key):
+    if not root: return None
+    
+    if key < root.val:
+        root.left = deleteNode(root.left, key)   # 重新连接
+    elif key > root.val:
+        root.right = deleteNode(root.right, key)
+    else:
+        # 4种情况：无子/左子/右子/双子
+        if not root.left: return root.right
+        if not root.right: return root.left
+        # 双子：左树挂到右树最左节点
+        temp = root.right
+        while temp.left: temp = temp.left
+        temp.left = root.left
+        return root.right
+    
+    return root</code></pre>
+            
+            <hr>
+            
+            <h2>核心原则</h2>
+            
+            <h3>递归黄金法则</h3>
+            <p><strong>需要子问题结果 → 必须return递归调用</strong></p>
+            
+            <h3>树修改原则</h3>
+            <p><strong>改树必重连，有果必return</strong></p>
+            
+            <h3>常见错误</h3>
+            <ul>
+                <li>忘记return递归结果</li>
+                <li>忘记重新连接：<code>root.left = deleteNode(...)</code></li>
+                <li>类方法调用忘记<code>self.</code></li>
+            </ul>
+          </div>
+        </article>
+      </main>
+      
+      <footer id="footer">
+        <div class="footer-left">
+          Copyright &copy;
+          
+          
+            2023-2024
+          
+          ch4r1ty
+        </div>
+        <div class="footer-right">
+          <nav>
+            <ul>
+               
+              <li><a href="/">Home</a></li>
+              
+              <li><a href="/about/">About</a></li>
+              
+              <li><a href="/archives/">Writing</a></li>
+              
+              <li><a target="_blank" rel="noopener" href="https://github.com/ch4r1ty">Projects</a></li>
+              
+            </ul>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html> 
